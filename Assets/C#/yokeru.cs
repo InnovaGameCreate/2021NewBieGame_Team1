@@ -5,7 +5,7 @@ using UnityEngine;
 public class yokeru : MonoBehaviour
 {
     // Start is called before the first frame update
-    private int a, b, h;
+    private int a, b;
 
     void Start()
     {
@@ -17,45 +17,40 @@ public class yokeru : MonoBehaviour
     {
       b=Random.Range(1,5);
 
-      /*敵の入力を1~4の整数で入力してください*/
 
-      //if (a==0){
-      //ここが自分の入力
-        if(Input.GetKey(KeyCode.LeftArrow)){
+    //ここが自分の避けるむきの入力をする場所
+        if(Input.GetKeyDown(KeyCode.LeftArrow)){
           a = 1;
         }
-        else if(Input.GetKey(KeyCode.RightArrow)){
+        else if(Input.GetKeyDown(KeyCode.RightArrow)){
           a = 2;
         }
-        else if(Input.GetKey(KeyCode.UpArrow)){
+        else if(Input.GetKeyDown(KeyCode.UpArrow)){
           a = 3;
         }
-        else if(Input.GetKey(KeyCode.DownArrow)){
+        else if(Input.GetKeyDown(KeyCode.DownArrow)){
           a = 4;
         }
       //}
-        else {
+        else  {
           Debug.Log("矢印を入力してください");
         }
+
         //ここから別の処理で相手と自分の判定
+        if(a!=0){
         if(a==b){
           //h = 2;
-          Debug.Log("ここでがめおゔぇら");
-
+          Debug.Log("ここでがめおゔぇらのシーンに飛ぶ");
+          a =0;
 
         }
         else if(a!=b){
-            Debug.Log("ここでじゃんけん");
+            Debug.Log("ここでじゃんけんのシーンにとぶ");
 
-
+            a = 0;
         }
+      }
 
-        /*else{
-          Debug.Log("矢印を入力してください");
-        //  h = 1;
-        }*/
-
-    //return h;
 
     }
 }
