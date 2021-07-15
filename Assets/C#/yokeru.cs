@@ -15,8 +15,9 @@ public class yokeru : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      b=1;
-      //a=0;
+      b=Random.Range(1,5);
+
+      /*敵の入力を1~4の整数で入力してください*/
 
       //if (a==0){
       //ここが自分の入力
