@@ -16,7 +16,7 @@ public class GoGame : MonoBehaviour
         if(Input.GetKey(KeyCode.Space))
         {
             Debug.Log("pushButton");
-            SceneManager.LoadScene("じゃんけん");
+            SceneManager.LoadScene("Zyanken");
         }
     }
 }
