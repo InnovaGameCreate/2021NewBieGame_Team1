@@ -18,7 +18,6 @@ public class Zyanken : MonoBehaviour
     {
         one = false;
         phase = true;
-        iraira = 50;
     }
 
     // Update is called once per frame
