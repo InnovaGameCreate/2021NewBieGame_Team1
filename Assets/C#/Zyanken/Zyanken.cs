@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Zyanken : MonoBehaviour
 {
@@ -68,6 +69,7 @@ public class Zyanken : MonoBehaviour
     IEnumerator Win()
     {
         yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("HOI");
         yield return new WaitForSeconds(2f);
         yield break;
     }
@@ -75,6 +77,7 @@ public class Zyanken : MonoBehaviour
     IEnumerator Lose()
     {
         yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Escape");
         yield return new WaitForSeconds(2f);
         yield break;
     }
