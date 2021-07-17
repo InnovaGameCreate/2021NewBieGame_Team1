@@ -12,13 +12,13 @@ public class EnemyGuu : MonoBehaviour
     private bool oneAction;
     void Start()
     {
-        transform.position = new Vector3(-9, 30, 0);
+        transform.position = new Vector3(0, 30, -7);
         Player = GameObject.Find("player");
         oneAction = true;
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             oneAction = true;
         }
@@ -32,9 +32,9 @@ public class EnemyGuu : MonoBehaviour
     IEnumerator Count()
     {
         yield return new WaitForSeconds(1f);
-        transform.position = new Vector3(-9, 0, 0);
+        transform.position = new Vector3(0, 0, -7);
         yield return new WaitForSeconds(3f);
-        transform.position = new Vector3(-9, 30, 0);
+        transform.position = new Vector3(0, 30, -7);
         yield break;
 ;   }
 }

@@ -13,11 +13,8 @@ public class Zyanken : MonoBehaviour
 
     public bool one; //Ç∂Ç·ÇÒÇØÇÒÇàÍâÒÇÃÇ›çsÇ§
     public bool phase;
-    public Text message;
-
     void Start()
     {
-        message.text = "Ç∂Ç·ÇÒÇØÇÒ";
         one = false;
         phase = true;
         iraira = 50;
@@ -28,26 +25,23 @@ public class Zyanken : MonoBehaviour
     {
         if(phase == true)
         {
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 hand = 1;
                 enemy = Random.Range(1, 4);
                 one = true;
-                message.text = "Ç€ÇÒ";
             }
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 hand = 2;
                 enemy = Random.Range(1, 4);
                 one = true;
-                message.text = "Ç€ÇÒ";
             }
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 hand = 3;
                 enemy = Random.Range(1, 4);
                 one = true;
-                message.text = "Ç€ÇÒ";
             }
 
             if (((hand - enemy + 3) % 3 == 2) && (one == true))
@@ -74,7 +68,6 @@ public class Zyanken : MonoBehaviour
     IEnumerator Win()
     {
         yield return new WaitForSeconds(2f);
-        message.text = "Ç†Ç»ÇΩÇÃèüÇøÇ≈Ç∑";
         yield return new WaitForSeconds(2f);
         yield break;
     }
@@ -82,7 +75,6 @@ public class Zyanken : MonoBehaviour
     IEnumerator Lose()
     {
         yield return new WaitForSeconds(2f);
-        message.text = "Ç†Ç»ÇΩÇÃïâÇØÇ≈Ç∑";
         yield return new WaitForSeconds(2f);
         yield break;
     }
@@ -90,7 +82,6 @@ public class Zyanken : MonoBehaviour
     IEnumerator Drow()
     {
         yield return new WaitForSeconds(4f);
-        message.text = "Ç†Ç¢Ç±Ç≈";
         iraira = iraira + 10;
         phase = true;
         yield break;

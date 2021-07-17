@@ -18,13 +18,13 @@ public class Guu : MonoBehaviour
     {
         if(once == true)
         {
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S))
+            if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.UpArrow))
             {
-                transform.position = new Vector3(14, 30, 0);
+                transform.position = new Vector3(8, 30, 7);
                 StartCoroutine("CountGuu");
                 once = false;
             }
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.LeftArrow))
             {
                 once = false;
                 StartCoroutine("Count");
@@ -35,7 +35,7 @@ public class Guu : MonoBehaviour
     IEnumerator CountGuu()
     {
         yield return new WaitForSeconds(4f);
-        transform.position = new Vector3(14, 0, 0);
+        transform.position = new Vector3(8, 0, 7);
         once = true;
         yield break;
     }

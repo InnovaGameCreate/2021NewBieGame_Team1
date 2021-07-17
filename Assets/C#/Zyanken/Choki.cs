@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Choki : MonoBehaviour
 {
-    private const bool V = true;
     public GameObject Player;
 
     public bool once;
@@ -20,13 +19,13 @@ public class Choki : MonoBehaviour
     {
         if (once == true)
         {
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
             {
-                transform.position = new Vector3(10, 30, 0);
+                transform.position = new Vector3(0, 30, 2);
                 StartCoroutine("CountChoki");
                 once = false;
             }
-            if(Input.GetKey(KeyCode.S))
+            if(Input.GetKey(KeyCode.UpArrow))
             {
                 once = false;
                 StartCoroutine("Count");
@@ -37,7 +36,7 @@ public class Choki : MonoBehaviour
     IEnumerator CountChoki()
     {
         yield return new WaitForSeconds(4f);
-        transform.position = new Vector3(10, 0, 0);
+        transform.position = new Vector3(0, 0, 2);
         once = true;
         yield break;
     }

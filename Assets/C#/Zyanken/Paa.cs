@@ -18,13 +18,13 @@ public class Paa : MonoBehaviour
     {
         if (once == true)
         {
-            if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S))
+            if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.UpArrow))
             {
-                transform.position = new Vector3(6, 30, 0);
+                transform.position = new Vector3(-8, 30, 7);
                 StartCoroutine("CountPaa");
                 once = false;
             }
-            if(Input.GetKey(KeyCode.D))
+            if(Input.GetKey(KeyCode.RightArrow))
             {
                 once = false;
                 StartCoroutine("Count");
@@ -34,7 +34,7 @@ public class Paa : MonoBehaviour
     IEnumerator CountPaa()
     {
         yield return new WaitForSeconds(4f);
-        transform.position = new Vector3(6, 0, 0);
+        transform.position = new Vector3(-8, 0, 7);
         once = true;
         yield break;
     }
