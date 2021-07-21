@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class GoTitle : MonoBehaviour
+public class GoExplanation2 : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,10 +13,10 @@ public class GoTitle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.T))
+        if(Input.GetKey(KeyCode.RightArrow))
         {
             Debug.Log("pushButton");
-            SceneManager.LoadScene("Title");
+            SceneManager.LoadScene("Explanation2");
         }
     }
 }
