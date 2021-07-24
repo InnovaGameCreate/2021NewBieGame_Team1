@@ -34,14 +34,14 @@ public class Guu : MonoBehaviour
 
     IEnumerator CountGuu()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         transform.position = new Vector3(8, 0, 7);
         once = true;
         yield break;
     }
     IEnumerator Count()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         once = true;
         yield break;
     }

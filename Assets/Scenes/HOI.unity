@@ -507,7 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05790cd5e1853bf4cb9b6969ee783b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cube: {fileID: 1375630866}
+  Enemy: {fileID: 1375630866}
   MajorText: {fileID: 849349976}
   data: {fileID: 0}
   dataCs: {fileID: 0}
@@ -540,7 +540,7 @@ GameObject:
   - component: {fileID: 1375630868}
   - component: {fileID: 1375630867}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

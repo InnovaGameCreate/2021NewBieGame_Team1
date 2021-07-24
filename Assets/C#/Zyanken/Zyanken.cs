@@ -14,10 +14,17 @@ public class Zyanken : MonoBehaviour
 
     public bool one; //Ç∂Ç·ÇÒÇØÇÒÇàÍâÒÇÃÇ›çsÇ§
     public bool phase;
+
+    AudioSource audioSource;
+    public AudioClip sound1;
+    public AudioClip sound2;
+    public AudioClip sound3;
+    public AudioClip sound4;
     void Start()
     {
         one = false;
         phase = true;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,18 +55,21 @@ public class Zyanken : MonoBehaviour
             {
                 StartCoroutine("Win");//â∫ÇÃWinÇå©ÇƒÇ≠ÇÍ
                 one = false;
+                audioSource.PlayOneShot(sound1);
                 phase = false;
             }
             if ((enemy - hand == 0) && (one == true))
             {
                 StartCoroutine("Drow");
                 one = false;//â∫ÇÃIEnumuratorÇå©ÇƒÇ≠ÇÍÅB
+                audioSource.PlayOneShot(sound1);
                 phase = false;
             }
             if (((hand - enemy + 3) % 3 == 1) && (one == true))
             {
                 StartCoroutine("Lose");//â∫ÇÃLoseÇå©ÇƒÇ≠ÇÍ
                 one = false;
+                audioSource.PlayOneShot(sound1);
                 phase = false;
             }
         }
@@ -67,24 +77,33 @@ public class Zyanken : MonoBehaviour
 
     IEnumerator Win()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
+        audioSource.PlayOneShot(sound2);
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("HOI");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         yield break;
     }
 
     IEnumerator Lose()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
+        audioSource.PlayOneShot(sound3);
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Escape");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         yield break;
     }
 
     IEnumerator Drow()
     {
-        yield return new WaitForSeconds(4f);
-        iraira = iraira + 10;
+        yield return new WaitForSeconds(1f);
+        audioSource.PlayOneShot(sound4);
+        yield return new WaitForSeconds(0.5f);
+        iraira = iraira + irairaPerOnce;
+        GameObject director = GameObject.Find("IrairaDirector");
+        director.GetComponent<IrairaDirector>().IncreaseIrairaGauge();
+        yield return new WaitForSeconds(1f);
         phase = true;
         yield break;
     }

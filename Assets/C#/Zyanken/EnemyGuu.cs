@@ -31,9 +31,9 @@ public class EnemyGuu : MonoBehaviour
 
     IEnumerator Count()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         transform.position = new Vector3(0, 0, -7);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         transform.position = new Vector3(0, 30, -7);
         yield break;
 ;   }
