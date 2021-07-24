@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Explanation2.unity
     guid: ee5a93ddbd50b534191ed8baa4deddc1
   - enabled: 1
+    path: Assets/Scenes/Explanation3.unity
+    guid: a4b109b9501e90743ae70b3346d64a48
+  - enabled: 1
+    path: Assets/Scenes/Explanation4.unity
+    guid: ac98fe99eb3c90e42b6f33d97f5bb6cb
+  - enabled: 1
     path: Assets/Scenes/Zyanken.unity
     guid: 196c825bceb0bb844bc7190f14b41b9e
   - enabled: 1
