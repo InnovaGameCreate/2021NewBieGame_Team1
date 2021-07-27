@@ -16,6 +16,7 @@ public class HumanPunchMotion : MonoBehaviour
     {
         if (Input.GetKey("up")) //↑入力でアッパーカット
         {
+            transform.rotation = Quaternion.AngleAxis(256, new Vector3(0, 1, 0));
             animator.SetBool("is_upperCut", true);
         }
         else
