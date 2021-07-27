@@ -6,11 +6,11 @@ public class yokeru : MonoBehaviour
 {
     // Start is called before the first frame update
     private int a, b;
-    //private Animator anim;
+    private Animator anim;
 
     void Start()
     {
-      //anim = gameObject.GetComponent<Animator>();
+      anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,23 +26,28 @@ public class yokeru : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.LeftArrow)){
           a = 1;
-          //anim.SetBool("左むく",true);
+          anim.SetBool("Right",true);
         }
+
         else if(Input.GetKeyDown(KeyCode.RightArrow)){
           a = 2;
-          //anim.SetBool("右向く",true);
+          anim.SetBool("Left",true);
         }
         else if(Input.GetKeyDown(KeyCode.UpArrow)){
           a = 3;
-          //anim.SetBool("上向く",true);
+          anim.SetBool("Up",true);
         }
         else if(Input.GetKeyDown(KeyCode.DownArrow)){
           a = 4;
-          //anim.SetBool("下向く",true);
+          anim.SetBool("Down",true);
         }
 
         else  {
-          Debug.Log("矢印を入力してください");
+          //Debug.Log("矢印を入力してください");
+          anim.SetBool("Is_left",false);
+          anim.SetBool("Is_right",false);
+          anim.SetBool("Is_up",false);
+          anim.SetBool("Is_down",false);
         }
 
         //ここから別の処理で相手と自分の判定
