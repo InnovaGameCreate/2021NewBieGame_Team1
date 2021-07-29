@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class yokeru : MonoBehaviour
 {
@@ -61,6 +63,8 @@ public class yokeru : MonoBehaviour
             if (a == b)
             {
                 //h = 2;
+                  StartCoroutine("Lose");//����Lose�����Ă���
+
                 Debug.Log("ここでがめおゔぇらのシーンに飛ぶ");
                 a = 0;
 
@@ -68,6 +72,7 @@ public class yokeru : MonoBehaviour
             else if (a != b)
             {
                 Debug.Log("ここでじゃんけんのシーンに飛ぶ");
+                StartCoroutine("Win");//����Win�����Ă���
 
                 a = 0;
             }
@@ -75,4 +80,23 @@ public class yokeru : MonoBehaviour
 
 
     }
+    IEnumerator Win()
+    {
+        yield return new WaitForSeconds(1f);
+      //  audioSource.PlayOneShot(sound2);
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("Zyanken");
+        yield return new WaitForSeconds(1f);
+        yield break;
+    }
+    IEnumerator Lose()
+    {
+        yield return new WaitForSeconds(1f);
+        //audioSource.PlayOneShot(sound3);
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("Result");
+        yield return new WaitForSeconds(1f);
+        yield break;
+    }
+
 }
