@@ -24,22 +24,22 @@ public class yokeru : MonoBehaviour
 
       //ここが自分の入力
 
-        if(Input.GetKeyDown(KeyCode.LeftArrow)){
+        if(Input.GetKey(KeyCode.LeftArrow)){
           a = 1;
-          anim.SetBool("Right",true);
+          anim.SetBool("Is_right",true);
         }
 
-        else if(Input.GetKeyDown(KeyCode.RightArrow)){
+        else if(Input.GetKey(KeyCode.RightArrow)){
           a = 2;
-          anim.SetBool("Left",true);
+          anim.SetBool("Is_left",true);
         }
-        else if(Input.GetKeyDown(KeyCode.UpArrow)){
+        else if(Input.GetKey(KeyCode.UpArrow)){
           a = 3;
-          anim.SetBool("Up",true);
+          anim.SetBool("Is_up",true);
         }
-        else if(Input.GetKeyDown(KeyCode.DownArrow)){
+        else if(Input.GetKey(KeyCode.DownArrow)){
           a = 4;
-          anim.SetBool("Down",true);
+          anim.SetBool("Is_down",true);
         }
 
         else  {
