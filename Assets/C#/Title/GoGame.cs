@@ -7,7 +7,7 @@ public class GoGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -16,7 +16,7 @@ public class GoGame : MonoBehaviour
         if(Input.GetKey(KeyCode.Space))
         {
             Debug.Log("pushButton");
-            SceneManager.LoadScene("Zyanken");
+            FadeManager.FadeOut(5);
         }
     }
 }
