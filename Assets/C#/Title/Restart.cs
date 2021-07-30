@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class GoExplanation4 : MonoBehaviour
+public class Restart : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,10 +13,10 @@ public class GoExplanation4 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.RightArrow))
+        if(Input.GetKey(KeyCode.R))
         {
-            Debug.Log("pushButton");
-            FadeManager.FadeOut(4);
+            SceneManager.LoadScene("Zyanken");
+
         }
     }
 }

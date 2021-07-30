@@ -16,7 +16,7 @@ public class GoExplanation2 : MonoBehaviour
         if(Input.GetKey(KeyCode.RightArrow))
         {
             Debug.Log("pushButton");
-            SceneManager.LoadScene("Explanation2");
+           FadeManager.FadeOut(2);
         }
     }
 }
