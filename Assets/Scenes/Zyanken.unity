@@ -1664,6 +1664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b523d44f0f90e41b1b170bd937d437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gauge: {fileID: 1105890201}
 --- !u!4 &1590054711
 Transform:
   m_ObjectHideFlags: 0
