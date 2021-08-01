@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/HOI.unity
     guid: bbd2d93df8da42c4793931ab594e0d6f
   - enabled: 1
+    path: Assets/Scenes/Punch.unity
+    guid: 4393ed14b98ddd944aa23260cf720508
+  - enabled: 1
     path: Assets/Scenes/Escape.unity
     guid: 9327c0ea7a8c85c4faededffc41a931d
   - enabled: 1

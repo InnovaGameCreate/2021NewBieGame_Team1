@@ -16,6 +16,7 @@ public class Punch : MonoBehaviour
         anim = GetComponent<Animator>();
         l = Random.Range(1, 5);
         rigidBody = GetComponent<Rigidbody>();
+        this.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -68,23 +69,19 @@ public class Punch : MonoBehaviour
             {
                 if (k == 1)
                 {
-                    Debug.Log("うんち");
-                    rigidBody.AddForce(Vector3.left * 100, ForceMode.Impulse);
+                    rigidBody.AddForce(Vector3.left * 10, ForceMode.Impulse);
                 }
                 else if (k == 2)
                 {
-                    Debug.Log("うんち");
-                    rigidBody.AddForce(Vector3.right * 100, ForceMode.Impulse);
+                    rigidBody.AddForce(Vector3.right * 10, ForceMode.Impulse);
                 }
                 else if (k == 3)
                 {
-                    Debug.Log("うんち");
-                    rigidBody.AddForce(Vector3.up * 100, ForceMode.Impulse);
+                    rigidBody.AddForce(Vector3.up * 10, ForceMode.Impulse);
                 }
                 else if (k == 4)
                 {
-                    Debug.Log("うんち");
-                    rigidBody.AddForce(Vector3.forward * 100, ForceMode.Impulse);
+                    rigidBody.AddForce(Vector3.forward * 10, ForceMode.Impulse);
                 }
             }
         }

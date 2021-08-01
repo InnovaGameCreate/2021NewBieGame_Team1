@@ -13,6 +13,7 @@ public class RagdollImpact : MonoBehaviour
     Rigidbody rigidBody;
     Rigidbody playerRigidBody;
     GameObject Player;
+    GameObject Field;
 
     void Start()
     {
@@ -95,8 +96,10 @@ public class RagdollImpact : MonoBehaviour
             rigidBody.AddForce(Vector3.back * (impulse * 1 / 2), ForceMode.Impulse);
             rigidBody.AddTorque(10, 10, 100, ForceMode.Force);
 
+
             isCollision = true;
         }
+
     }
 
     IEnumerator Win()
@@ -112,7 +115,7 @@ public class RagdollImpact : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         //audioSource.PlayOneShot(sound3);
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Result");
         yield return new WaitForSeconds(1f);
         yield break;

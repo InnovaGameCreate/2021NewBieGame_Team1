@@ -34,8 +34,19 @@ public class hoi : MonoBehaviour
         {
             a = 4;
         }
+
+        if (Input.GetKeyDown(KeyCode.RightShift))
+        {
+            Debug.Log("右シフト");
+            SceneManager.LoadScene("Punch");
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            Debug.Log("左シフト");
+            SceneManager.LoadScene("Punch");
+        }
         //以下敵のアニメーション再生
-        
+
         if (a != 0)
         {
             if (a == b)//勝利　ただしスコア0
@@ -96,6 +107,7 @@ public class hoi : MonoBehaviour
         yield return new WaitForSeconds(1f);
         yield break;
     }
+
     IEnumerator Lose()
     {
         yield return new WaitForSeconds(1f);
