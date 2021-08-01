@@ -11,12 +11,13 @@ public class yokeru : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        b = Random.Range(1, 5);
     }
 
     // Update is called once per frame
     void Update()
     {
-        b = Random.Range(1, 5);
+        
         //Debug.Log(b);
         //a =0;
         /*敵の入力を1~4の整数で入力してください*/
@@ -44,15 +45,6 @@ public class yokeru : MonoBehaviour
         {
             a = 4;
             anim.SetBool("Is_down", true);
-        }
-
-        else
-        {
-            //Debug.Log("矢印を入力してください");
-            anim.SetBool("Is_left", false);
-            anim.SetBool("Is_right", false);
-            anim.SetBool("Is_up", false);
-            anim.SetBool("Is_down", false);
         }
 
         //ここから別の処理で相手と自分の判定
