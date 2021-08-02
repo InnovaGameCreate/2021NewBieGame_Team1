@@ -8,12 +8,8 @@ public class Zyanken : MonoBehaviour
 {
     public float hand;
     public int enemy;
-    
-    public float iraira;//イライラゲージ
-    public float irairaPerOnce;//イライラゲージの上昇量
 
-    public bool one; //じゃんけんを一回のみ行う
-    public bool phase;
+    private bool one; //じゃんけんを一回のみ行う
 
     AudioSource audioSource;
     public AudioClip sound1;
@@ -23,88 +19,125 @@ public class Zyanken : MonoBehaviour
     void Start()
     {
         one = false;
-        phase = true;
         audioSource = GetComponent<AudioSource>();
+        enemy = Random.Range(1, 4);
+        hand = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(phase == true)
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            hand = 1;
+            one = true;
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            hand = 2;
+            one = true;
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            hand = 3;
+            one = true;
+        }
+        if (hand != 0)
+        {
+            if ((hand == 1) && (enemy == 1) && (one == true))
             {
-                hand = 1;
-                enemy = Random.Range(1, 4);
-                one = true;
-            }
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                hand = 2;
-                enemy = Random.Range(1, 4);
-                one = true;
-            }
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                hand = 3;
-                enemy = Random.Range(1, 4);
-                one = true;
-            }
-
-            if (((hand - enemy + 3) % 3 == 2) && (one == true))
-            {
-                StartCoroutine("Win");//下のWinを見てくれ
+                hand = 0;
+                StartCoroutine("Drow");//下のWinを見てくれ
                 one = false;
                 audioSource.PlayOneShot(sound1);
-                phase = false;
             }
-            if ((enemy - hand == 0) && (one == true))
+            else if (hand == 1 && enemy == 2 && (one == true))
             {
-                StartCoroutine("Drow");
+                hand = 0;
+                StartCoroutine("Win");
                 one = false;//下のIEnumuratorを見てくれ。
                 audioSource.PlayOneShot(sound1);
-                phase = false;
             }
-            if (((hand - enemy + 3) % 3 == 1) && (one == true))
+            else if (hand == 1 && enemy == 3 && (one == true))
             {
+                hand = 0;
                 StartCoroutine("Lose");//下のLoseを見てくれ
                 one = false;
                 audioSource.PlayOneShot(sound1);
-                phase = false;
+            }
+            else if (hand == 2 && enemy == 1 && (one == true))
+            {
+                hand = 0;
+                StartCoroutine("Lose");//下のLoseを見てくれ
+                one = false;
+                audioSource.PlayOneShot(sound1);
+            }
+            else if (hand == 2 && enemy == 2 && (one == true))
+            {
+                hand = 0;
+                StartCoroutine("Drow");//下のLoseを見てくれ
+                one = false;
+                audioSource.PlayOneShot(sound1);
+            }
+            else if (hand == 2 && enemy == 3 && (one == true))
+            {
+                hand = 0;
+                StartCoroutine("Win");//下のLoseを見てくれ
+                one = false;
+                audioSource.PlayOneShot(sound1);
+            }
+            else if (hand == 3 && enemy == 1&& (one == true))
+            {
+                hand = 0;
+                StartCoroutine("Win");//下のLoseを見てくれ
+                one = false;
+                audioSource.PlayOneShot(sound1);
+            }
+            else if (hand == 3 && enemy == 2 && (one == true))
+            {
+                hand = 0;
+                StartCoroutine("Lose");//下のLoseを見てくれ
+                one = false;
+                audioSource.PlayOneShot(sound1);
+            }
+            else if (hand == 3 && enemy == 3 && (one == true))
+            {
+                hand = 0;
+                StartCoroutine("Drow");//下のLoseを見てくれ
+                one = false;
+                audioSource.PlayOneShot(sound1);
             }
         }
     }
 
     IEnumerator Win()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.0f);
         audioSource.PlayOneShot(sound2);
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("HOI");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.0f);
         yield break;
     }
 
     IEnumerator Lose()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.0f);
         audioSource.PlayOneShot(sound3);
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Escape");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.0f);
         yield break;
     }
 
     IEnumerator Drow()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.0f);
         audioSource.PlayOneShot(sound4);
         yield return new WaitForSeconds(0.5f);
-        iraira = iraira + irairaPerOnce;
         GameObject director = GameObject.Find("IrairaDirector");
         director.GetComponent<IrairaDirector>().IncreaseIrairaGauge();
-        yield return new WaitForSeconds(1f);
-        phase = true;
+        yield return new WaitForSeconds(1.0f);
         yield break;
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.45140058, g: 0.500893, b: 0.57231724, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: a0015a5237db8654fb4ae4a1d646d61d, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 33518080}
   - component: {fileID: 33518079}
   - component: {fileID: 33518078}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: enemyGuu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,10 +428,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hand: 0
   enemy: 0
-  iraira: 1
-  irairaPerOnce: 0.2
-  one: 0
-  phase: 0
   sound1: {fileID: 8300000, guid: 725b00f76118ee34798d8afbda9d4097, type: 3}
   sound2: {fileID: 8300000, guid: 2d12d9db8d419c2448b1396e79a89f65, type: 3}
   sound3: {fileID: 8300000, guid: 873ca3ef6368e2044831e7c777f3d804, type: 3}
@@ -521,7 +517,7 @@ GameObject:
   m_Component:
   - component: {fileID: 141671588}
   - component: {fileID: 141671589}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: "\u2192\u30AD\u30FC"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -604,7 +600,7 @@ GameObject:
   - component: {fileID: 154166252}
   - component: {fileID: 154166251}
   - component: {fileID: 154166250}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Guu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -701,7 +697,7 @@ GameObject:
   - component: {fileID: 194401800}
   - component: {fileID: 194401799}
   - component: {fileID: 194401798}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Paa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -797,7 +793,7 @@ GameObject:
   m_Component:
   - component: {fileID: 431750427}
   - component: {fileID: 431750428}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "\u2192\u30AD\u30FC"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -879,7 +875,7 @@ GameObject:
   m_Component:
   - component: {fileID: 541920680}
   - component: {fileID: 541920681}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "\u2192\u30AD\u30FC"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -951,6 +947,102 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &557886228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 557886232}
+  - component: {fileID: 557886231}
+  - component: {fileID: 557886230}
+  - component: {fileID: 557886229}
+  m_Layer: 0
+  m_Name: Quad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &557886229
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557886228}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &557886230
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557886228}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: cec70f92383d2d445a31bf9c14b6ca04, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &557886231
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557886228}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &557886232
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557886228}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalScale: {x: 50, y: 30, z: 10}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,13 +1129,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.25000006, y: -0.24999997, z: 0.066987306, w: 0.9330127}
+  m_LocalPosition: {x: 0, y: 30, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: -30, z: 0}
 --- !u!1 &733879916
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,7 +1147,7 @@ GameObject:
   - component: {fileID: 733879919}
   - component: {fileID: 733879918}
   - component: {fileID: 733879917}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Choki
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1153,7 +1245,7 @@ GameObject:
   - component: {fileID: 772104245}
   - component: {fileID: 772104244}
   - component: {fileID: 772104243}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1377,7 +1469,7 @@ GameObject:
   - component: {fileID: 1101107757}
   - component: {fileID: 1101107756}
   - component: {fileID: 1101107755}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: enemyChoki
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1474,6 +1566,7 @@ GameObject:
   - component: {fileID: 1105890202}
   - component: {fileID: 1105890204}
   - component: {fileID: 1105890203}
+  - component: {fileID: 1105890205}
   m_Layer: 5
   m_Name: Gauge
   m_TagString: Untagged
@@ -1516,7 +1609,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1538,6 +1631,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105890201}
   m_CullTransparentMesh: 1
+--- !u!114 &1105890205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105890201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf66e3667cd0c4449462058975c9843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1137776873
 GameObject:
   m_ObjectHideFlags: 0
@@ -1689,7 +1794,7 @@ GameObject:
   - component: {fileID: 1452125354}
   - component: {fileID: 1452125353}
   - component: {fileID: 1452125352}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: enemyPaa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1785,7 +1890,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1590054711}
   - component: {fileID: 1590054710}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: IrairaDirector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1804,7 +1909,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b523d44f0f90e41b1b170bd937d437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gauge: {fileID: 1105890201}
+  gauge: {fileID: 0}
+  fillAmount: 0
+  myObj: 0
 --- !u!4 &1590054711
 Transform:
   m_ObjectHideFlags: 0

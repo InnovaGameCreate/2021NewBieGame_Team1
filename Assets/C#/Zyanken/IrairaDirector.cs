@@ -5,32 +5,42 @@ using UnityEngine.UI;
 
 public class IrairaDirector : MonoBehaviour
 {
-    public GameObject gauge;
-    private float fillAmount;
+    static public GameObject gauge;
+    static public float fillAmount;
     private Image image;
+    private Image picture;
+    public bool first = false;
 
     Zyanken irairaGauge;
-
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        fillAmount = 0.0f;
-        irairaGauge = GameObject.Find("player").GetComponent <Zyanken>();
-        gauge = GameObject.Find("Gauge");
-        image = gauge.GetComponent<Image>();
-        image.fillAmount = 0.0f;
-        DontDestroyOnLoad(this.gameObject);
+        if (!first)
+        {
+            fillAmount = 0.0f;
+            irairaGauge = GameObject.Find("player").GetComponent<Zyanken>();
+            gauge = GameObject.Find("Gauge");
+            image = gauge.GetComponent<Image>();
+            image.fillAmount = 0.0f;
+            DontDestroyOnLoad(this.gameObject);
+            first = true;
+        }
+        else
+        {
+            irairaGauge = GameObject.Find("player").GetComponent<Zyanken>();
+        }
     }
 
-    // Update is called once per frame
+    public float GetFillAmount()
+    {
+        return image.fillAmount;
+    }
     public void IncreaseIrairaGauge()
     {
         image.fillAmount += 0.1f;
         fillAmount = image.fillAmount;
     }
-
-    public float GetFillAmount()
+    private void Update()
     {
-        return fillAmount;
+        image = gauge .GetComponent<Image>();
     }
 }

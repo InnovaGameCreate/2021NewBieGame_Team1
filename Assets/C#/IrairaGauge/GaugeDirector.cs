@@ -13,8 +13,4 @@ public class GaugeDirector : MonoBehaviour
         image = GetComponent<Image>();
         image.fillAmount = GameObject.Find("IrairaDirector").GetComponent<IrairaDirector>().GetFillAmount();
     }
-    void Update()
-    {
-        
-    }
 }

@@ -13,7 +13,7 @@ public class EnemyPaa : MonoBehaviour
     {
         transform.position = new Vector3(0, 30, -7);
         Player = GameObject.Find("player");
-        oneAction = true;
+        oneAction = false;
     }
 
     // Update is called once per frame
