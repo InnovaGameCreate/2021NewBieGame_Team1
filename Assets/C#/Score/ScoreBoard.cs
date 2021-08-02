@@ -13,7 +13,7 @@ public class ScoreBoard : MonoBehaviour
     {
         data = GameObject.Find("Data");
         dataCs = data.GetComponent<Data>();
-        message.text = "Score\n\n" + dataCs.score.ToString("f2");
+        message.text = dataCs.score.ToString("f2");
     }
 
     // Update is called once per frame
