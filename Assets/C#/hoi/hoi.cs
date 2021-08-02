@@ -11,8 +11,10 @@ public class hoi : MonoBehaviour
     public AudioClip win;
     public AudioClip lose;
     public int a, b;
-  　private Animator anim;
+    public GameObject data;
+    private Animator anim;
     bool SE = true;
+    public Data dataCs;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,8 @@ public class hoi : MonoBehaviour
         b = Random.Range(1, 5);
         a = 0;
         audioSource = GetComponent<AudioSource>();
+        data = GameObject.Find("Data");
+        dataCs = data.GetComponent<Data>();
     }
 
     // Update is called once per frame
@@ -81,6 +85,7 @@ public class hoi : MonoBehaviour
                     {
                         anim.SetBool("Is_down", true);
                     }
+                    
                     StartCoroutine("Win");
                     SE = false;
                 }
@@ -119,7 +124,7 @@ public class hoi : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         audioSource.PlayOneShot(win);
-        
+        dataCs.score = 0;
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Result");
         yield return new WaitForSeconds(1f);
