@@ -32,8 +32,7 @@ AnimatorState:
   m_Name: Right Hook
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: 893683395308033041}
+  m_Transitions: []
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -276,8 +275,7 @@ AnimatorState:
   m_Name: Uppercut
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: -9017432213910831179}
+  m_Transitions: []
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -328,8 +326,7 @@ AnimatorState:
   m_Name: Cross Punch
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: -4575284714397973246}
+  m_Transitions: []
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -389,8 +386,7 @@ AnimatorState:
   m_Name: Left Hook
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: -4409846158989585378}
+  m_Transitions: []
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0

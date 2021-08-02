@@ -10,6 +10,11 @@ public class Punch : MonoBehaviour
     private Animator anim;
     Rigidbody rigidBody;
     GameObject Player;
+    public GameObject BGM_Game;
+    AudioSource audioSource;
+    public AudioClip way;
+    bool SE = true;
+
 
     void Start()
     {
@@ -17,50 +22,46 @@ public class Punch : MonoBehaviour
         l = Random.Range(1, 5);
         rigidBody = GetComponent<Rigidbody>();
         this.gameObject.SetActive(false);
+        BGM_Game = GameObject.FindWithTag("BGM_Game");
+        Destroy(BGM_Game);
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
-        //Debug.Log(b);
-        //k =0;
-        /*敵の入力を1~4の整数で入力してください*/
-
-
-        //ここが自分の入力
-
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (SE == true)
         {
-            k = 1;
-            anim.SetBool("is_rightHook", true);
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                k = 1;
+                anim.SetBool("is_rightHook", true);
+                audioSource.PlayOneShot(way);
+                SE = false;
+            }
+            else if (Input.GetKey(KeyCode.RightArrow))
+            {
+                k = 2;
+                anim.SetBool("is_leftHook", true);
+                audioSource.PlayOneShot(way);
+                SE = false;
+            }
+            else if (Input.GetKey(KeyCode.UpArrow))
+            {
+                k = 3;
+                anim.SetBool("is_upperCut", true);
+                audioSource.PlayOneShot(way);
+                SE = false;
+            }
+            else if (Input.GetKey(KeyCode.DownArrow))
+            {
+                k = 4;
+                anim.SetBool("is_crossPunch", true);
+                audioSource.PlayOneShot(way);
+                SE = false;
+            }
         }
 
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            k = 2;
-            anim.SetBool("is_leftHook", true);
-        }
-        else if (Input.GetKey(KeyCode.UpArrow))
-        {
-            k = 3;
-            anim.SetBool("is_upperCut", true);
-        }
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            k = 4;
-            anim.SetBool("is_crossPunch", true);
-        }
-
-        else
-        {
-            //Debug.Log("矢印を入力してください");
-            anim.SetBool("is_rightHook", false);
-            anim.SetBool("is_leftHook", false);
-            anim.SetBool("is_upperCut", false);
-            anim.SetBool("is_crossPunch", false);
-        }
 
         //ここから別の処理で相手と自分の判定
         if (k != 0)

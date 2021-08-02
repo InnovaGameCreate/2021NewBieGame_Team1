@@ -29,7 +29,7 @@ public class SE : MonoBehaviour
                     audioSource.Play();
                     reloadTime1=0f;
               }
-            else if(Input.GetKey(KeyCode.E))
+            /*else if(Input.GetKey(KeyCode.E))
                 {
                     audioSource.Play();
                     reloadTime1=0f;
@@ -48,6 +48,6 @@ public class SE : MonoBehaviour
                 {
                     audioSource.Play();
                     reloadTime2=0f;
-                }  
+                }  */
     }       
 } 

@@ -44,11 +44,11 @@ public class UI_yokeru : MonoBehaviour
             }
             else if (m == 3)
             {
-                FingerDownImage.enabled = true;
+                FingerUpImage.enabled = true;
             }
             else if (m == 4)
             {
-                FingerUpImage.enabled = true;
+                FingerDownImage.enabled = true;
             }
             UpImage.enabled = false;
             DownImage.enabled = false;
@@ -66,11 +66,11 @@ public class UI_yokeru : MonoBehaviour
             }
             else if (m == 3)
             {
-                FingerDownImage.enabled = true;
+                FingerUpImage.enabled = true;
             }
             else if (m == 4)
             {
-                FingerUpImage.enabled = true;
+                FingerDownImage.enabled = true;
             }
             UpImage.enabled = false;
             DownImage.enabled = false;
@@ -88,11 +88,11 @@ public class UI_yokeru : MonoBehaviour
             }
             else if (m == 3)
             {
-                FingerDownImage.enabled = true;
+                FingerUpImage.enabled = true;
             }
             else if (m == 4)
             {
-                FingerUpImage.enabled = true;
+                FingerDownImage.enabled = true;
             }
             DownImage.enabled = false;
             RightImage.enabled = false;
@@ -110,11 +110,11 @@ public class UI_yokeru : MonoBehaviour
             }
             else if (m == 3)
             {
-                FingerDownImage.enabled = true;
+                FingerUpImage.enabled = true;
             }
             else if (m == 4)
             {
-                FingerUpImage.enabled = true;
+                FingerDownImage.enabled = true;
             }
             UpImage.enabled = false;
             RightImage.enabled = false;

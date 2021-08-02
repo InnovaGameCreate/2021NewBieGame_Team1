@@ -5,14 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class hoi : MonoBehaviour
 {
+    AudioSource audioSource;
+    public AudioClip way;
+    public AudioClip punchSound;
+    public AudioClip win;
+    public AudioClip lose;
     public int a, b;
   　private Animator anim;
+    bool SE = true;
     // Start is called before the first frame update
     void Start()
     {
-      anim = gameObject.GetComponent<Animator>();
-      b = Random.Range(1, 5);
-      a = 0;
+        anim = gameObject.GetComponent<Animator>();
+        b = Random.Range(1, 5);
+        a = 0;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -21,87 +28,98 @@ public class hoi : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             a = 1;
+            audioSource.PlayOneShot(way);
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             a = 2;
+            audioSource.PlayOneShot(way);
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             a = 3;
+            audioSource.PlayOneShot(way);
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             a = 4;
+            audioSource.PlayOneShot(way);
         }
 
         if (Input.GetKeyDown(KeyCode.RightShift))
         {
             Debug.Log("右シフト");
             SceneManager.LoadScene("Punch");
+            audioSource.PlayOneShot(punchSound);
         }
         else if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             Debug.Log("左シフト");
             SceneManager.LoadScene("Punch");
+            audioSource.PlayOneShot(punchSound);
         }
         //以下敵のアニメーション再生
-
-        if (a != 0)
+        if (SE == true)
         {
-            if (a == b)//勝利　ただしスコア0
+            if (a != 0)
             {
-                if (b == 1)
+                if (a == b)//勝利　ただしスコア0
                 {
-                    anim.SetBool("Is_right", true);
+                    if (b == 1)
+                    {
+                        anim.SetBool("Is_right", true);
+                    }
+                    else if (b == 2)
+                    {
+                        anim.SetBool("Is_left", true);
+                    }
+                    else if (b == 3)
+                    {
+                        anim.SetBool("Is_up", true);
+                    }
+                    else if (b == 4)
+                    {
+                        anim.SetBool("Is_down", true);
+                    }
+                    StartCoroutine("Win");
+                    SE = false;
                 }
-                else if (b == 2)
+
+                else if (a != b)//敵に避けられた
                 {
-                    anim.SetBool("Is_left", true);
+
+                    //以下敵のアニメーション再生
+                    if (b == 1)
+                    {
+                        anim.SetBool("Is_right", true);
+                    }
+                    else if (b == 2)
+                    {
+                        anim.SetBool("Is_left", true);
+                    }
+                    else if (b == 3)
+                    {
+                        anim.SetBool("Is_up", true);
+                    }
+                    else if (b == 4)
+                    {
+                        anim.SetBool("Is_down", true);
+                    }
+
+                    //ここでイライラゲージが上昇する
+
+                    StartCoroutine("Lose");
+                    SE = false;
                 }
-                else if (b == 3)
-                {
-                    anim.SetBool("Is_up", true);
-                }
-                else if (b == 4)
-                {
-                    anim.SetBool("Is_down", true);
-                }
-                Debug.Log("勝利");
-                StartCoroutine("Win");
-            }
-            
-            else if (a != b)//敵に避けられた
-            {
-                //以下敵のアニメーション再生
-                if (b == 1)
-                {
-                    anim.SetBool("Is_right", true);
-                }
-                else if (b == 2)
-                {
-                    anim.SetBool("Is_left", true);
-                }
-                else if (b == 3)
-                {
-                    anim.SetBool("Is_up", true);
-                }
-                else if (b == 4)
-                {
-                    anim.SetBool("Is_down", true);
-                }
-                //ここでイライラゲージが上昇する
-                StartCoroutine("Lose");
             }
         }
     }
-          //ここは自分と相手が違う方向になった時
-
 
     IEnumerator Win()
     {
         yield return new WaitForSeconds(1f);
-        //  audioSource.PlayOneShot(sound2);
+        audioSource.PlayOneShot(win);
+        
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Result");
         yield return new WaitForSeconds(1f);
@@ -111,7 +129,8 @@ public class hoi : MonoBehaviour
     IEnumerator Lose()
     {
         yield return new WaitForSeconds(1f);
-        //audioSource.PlayOneShot(sound3);
+        audioSource.PlayOneShot(lose);
+        
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Zyanken");
         yield return new WaitForSeconds(1f);

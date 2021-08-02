@@ -24,12 +24,12 @@ public class SE_Explanation : MonoBehaviour
                 {
                     reloadTime2 = reloadTime2 + Time.deltaTime;
                 }
-              else if(Input.GetKey(KeyCode.RightArrow))
+              else if(Input.GetKeyDown(KeyCode.RightArrow))
                 {
                     audioSource.Play();
                     reloadTime2=0f;
                 }
-              else if(Input.GetKey(KeyCode.LeftArrow))
+              else if(Input.GetKeyDown(KeyCode.LeftArrow))
                 {
                     audioSource.Play();
                     reloadTime2=0f;

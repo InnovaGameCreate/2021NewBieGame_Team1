@@ -20,7 +20,6 @@ public class IrairaDirector : MonoBehaviour
         image = gauge.GetComponent<Image>();
         image.fillAmount = 0.0f;
         DontDestroyOnLoad(this.gameObject);
-        Debug.Log("aaa");
     }
 
     // Update is called once per frame
