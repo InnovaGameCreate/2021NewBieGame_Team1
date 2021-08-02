@@ -7,7 +7,6 @@ public class GaugeDirector : MonoBehaviour
 {
 
     private Image image;
-
     void Start()
     {
         image = GetComponent<Image>();

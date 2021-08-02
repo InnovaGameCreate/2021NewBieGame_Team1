@@ -2,32 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement; 
 
 public class IrairaDirector : MonoBehaviour
 {
+    private static IrairaDirector instance = null;
+
     static public GameObject gauge;
-    static public float fillAmount;
+    static public float fillAmount = 0.0f;
     private Image image;
     private Image picture;
-    public bool first = false;
 
     Zyanken irairaGauge;
-    void Awake()
+
+
+    void Awake ()
     {
-        if (!first)
+
+        SceneManager.sceneLoaded += SetComponent ;
+        if (instance == null)
         {
-            fillAmount = 0.0f;
-            irairaGauge = GameObject.Find("player").GetComponent<Zyanken>();
-            gauge = GameObject.Find("Gauge");
-            image = gauge.GetComponent<Image>();
-            image.fillAmount = 0.0f;
-            DontDestroyOnLoad(this.gameObject);
-            first = true;
+            instance = this;
         }
         else
         {
-            irairaGauge = GameObject.Find("player").GetComponent<Zyanken>();
+            Destroy(this.gameObject);
+            return;
         }
+
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    void SetComponent(Scene S,LoadSceneMode mode )
+    { 
+        gauge = GameObject.Find("Gauge");
+        if(gauge != null)
+        {
+            image = gauge.GetComponent<Image>();
+            image.fillAmount = fillAmount;
+        }
+
+        Debug.Log("asd");
     }
 
     public float GetFillAmount()
@@ -38,9 +53,5 @@ public class IrairaDirector : MonoBehaviour
     {
         image.fillAmount += 0.1f;
         fillAmount = image.fillAmount;
-    }
-    private void Update()
-    {
-        image = gauge .GetComponent<Image>();
     }
 }
