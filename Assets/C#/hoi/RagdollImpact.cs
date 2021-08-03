@@ -7,7 +7,7 @@ public class RagdollImpact : MonoBehaviour
 {
     private Animator animator;
     public float impulse = 300;
-    bool isCollision = false;
+    public float magnification;
 
     public AudioClip lightPunch;
     public AudioClip heavyPunch;
@@ -22,7 +22,9 @@ public class RagdollImpact : MonoBehaviour
     Rigidbody playerRigidBody;
     GameObject Player;
     GameObject Field;
+
     bool SE = true;
+    bool isCollision = false;
 
 
     void Start()
@@ -35,6 +37,8 @@ public class RagdollImpact : MonoBehaviour
         punch = Player.GetComponent<Punch>();
         rigidBody.maxAngularVelocity = 100;
         audioSource = GetComponent<AudioSource>();
+
+        magnification = GameObject.Find("IrairaDirector").GetComponent<IrairaDirector>().power;
     }
 
     void Update()
@@ -104,18 +108,18 @@ public class RagdollImpact : MonoBehaviour
     {
             if (collision.gameObject.tag == "Player" && isCollision == false)
             {
-                if (impulse > 35)
+                if (magnification < 0.4f)
                 {
                     audioSource.PlayOneShot(lightPunch);
                 }
-                else if (impulse >= 35)
+                else if (magnification >= 0.4f)
                 {
                     audioSource.PlayOneShot(heavyPunch);
                 }
                 Vector3 playerVelocity = playerRigidBody.velocity;            //吹っ飛ばす
-                rigidBody.AddForce(playerVelocity * (impulse * 2), ForceMode.Impulse);
-                rigidBody.AddForce(Vector3.up * (impulse * 1 / 2), ForceMode.Impulse);
-                rigidBody.AddForce(Vector3.back * (impulse * 1 / 2), ForceMode.Impulse);
+                rigidBody.AddForce(playerVelocity * (impulse * 2) * magnification , ForceMode.Impulse);
+                rigidBody.AddForce(Vector3.up * (impulse * 1 / 2)* magnification, ForceMode.Impulse);
+                rigidBody.AddForce(Vector3.back * (impulse * 1 / 2) * magnification, ForceMode.Impulse);
                 rigidBody.AddTorque(10, 10, 100, ForceMode.Force);
                 isCollision = true;
             }

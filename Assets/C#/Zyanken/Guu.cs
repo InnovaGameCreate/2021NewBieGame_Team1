@@ -6,14 +6,12 @@ public class Guu : MonoBehaviour
 {
     public GameObject Player;
     private bool once;
-    // Start is called before the first frame update
     void Start()
     {
         Player = GameObject.Find("player");
         once = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(once == true)

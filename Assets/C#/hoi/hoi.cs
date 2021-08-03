@@ -10,10 +10,13 @@ public class hoi : MonoBehaviour
     public AudioClip punchSound;
     public AudioClip win;
     public AudioClip lose;
-    public int a, b;
+
     private Animator anim;
+
+    public int a, b;
+
     bool SE = true;
-    // Start is called before the first frame update
+
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
@@ -21,8 +24,6 @@ public class hoi : MonoBehaviour
         a = 0;
         audioSource = GetComponent<AudioSource>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -88,7 +89,6 @@ public class hoi : MonoBehaviour
 
                 else if (a != b)//敵に避けられた
                 {
-
                     //以下敵のアニメーション再生
                     if (b == 1)
                     {
@@ -107,8 +107,6 @@ public class hoi : MonoBehaviour
                         anim.SetBool("Is_down", true);
                     }
 
-                    //ここでイライラゲージが上昇する
-
                     StartCoroutine("Lose");
                     SE = false;
                 }
@@ -122,17 +120,17 @@ public class hoi : MonoBehaviour
         audioSource.PlayOneShot(win);
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Result");
-        yield return new WaitForSeconds(1f);
         yield break;
     }
 
     IEnumerator Lose()
     {
+        GameObject director = GameObject.Find("IrairaDirector");
+        director.GetComponent<IrairaDirector>().IncreaseGauge();
         yield return new WaitForSeconds(1f);
         audioSource.PlayOneShot(lose);  
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Zyanken");
-        yield return new WaitForSeconds(1f);
         yield break;
     }
 }

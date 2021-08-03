@@ -8,7 +8,7 @@ public class yokeru : MonoBehaviour
     public AudioClip way;
     public AudioClip win;
     public AudioClip lose;
-    // Start is called before the first frame update
+
     public int n, m;
     private Animator anim;
     bool SE = true;
@@ -21,15 +21,8 @@ public class yokeru : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-        //Debug.Log(b);
-        //a =0;
-        /*敵の入力を1~4の整数で入力してください*/
-
-
         //ここが自分の入力
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -66,23 +59,20 @@ public class yokeru : MonoBehaviour
                 if (n == m)
                 {
                     //h = 2;
-                    StartCoroutine("Lose"); //����Lose�����Ă���
+                    StartCoroutine("Lose");
                     SE = false;
-
                     //n = 0;
 
                 }
                 else if (n != m)
                 {
 
-                    StartCoroutine("Win"); //����Win�����Ă���
+                    StartCoroutine("Win");
                     SE = false;
-
                     //n = 0;
                 }
             }
         }
-
     }
     IEnumerator Win()
     {
@@ -102,5 +92,4 @@ public class yokeru : MonoBehaviour
         yield return new WaitForSeconds(1f);
         yield break;
     }
-
 }

@@ -9,13 +9,14 @@ public class Zyanken : MonoBehaviour
     public float hand;
     public int enemy;
 
-    private bool one; //‚¶‚á‚ñ‚¯‚ñ‚ğˆê‰ñ‚Ì‚İs‚¤
+    private bool one; 
 
     AudioSource audioSource;
     public AudioClip sound1;
     public AudioClip sound2;
     public AudioClip sound3;
     public AudioClip sound4;
+
     void Start()
     {
         one = false;
@@ -23,8 +24,6 @@ public class Zyanken : MonoBehaviour
         enemy = Random.Range(1, 4);
         hand = 0;
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -47,7 +46,7 @@ public class Zyanken : MonoBehaviour
             if ((hand == 1) && (enemy == 1) && (one == true))
             {
                 hand = 0;
-                StartCoroutine("Drow");//‰º‚ÌWin‚ğŒ©‚Ä‚­‚ê
+                StartCoroutine("Drow");
                 one = false;
                 audioSource.PlayOneShot(sound1);
             }
@@ -55,55 +54,55 @@ public class Zyanken : MonoBehaviour
             {
                 hand = 0;
                 StartCoroutine("Win");
-                one = false;//‰º‚ÌIEnumurator‚ğŒ©‚Ä‚­‚êB
+                one = false;
                 audioSource.PlayOneShot(sound1);
             }
             else if (hand == 1 && enemy == 3 && (one == true))
             {
                 hand = 0;
-                StartCoroutine("Lose");//‰º‚ÌLose‚ğŒ©‚Ä‚­‚ê
+                StartCoroutine("Lose");
                 one = false;
                 audioSource.PlayOneShot(sound1);
             }
             else if (hand == 2 && enemy == 1 && (one == true))
             {
                 hand = 0;
-                StartCoroutine("Lose");//‰º‚ÌLose‚ğŒ©‚Ä‚­‚ê
+                StartCoroutine("Lose");
                 one = false;
                 audioSource.PlayOneShot(sound1);
             }
             else if (hand == 2 && enemy == 2 && (one == true))
             {
                 hand = 0;
-                StartCoroutine("Drow");//‰º‚ÌLose‚ğŒ©‚Ä‚­‚ê
+                StartCoroutine("Drow");
                 one = false;
                 audioSource.PlayOneShot(sound1);
             }
             else if (hand == 2 && enemy == 3 && (one == true))
             {
                 hand = 0;
-                StartCoroutine("Win");//‰º‚ÌLose‚ğŒ©‚Ä‚­‚ê
+                StartCoroutine("Win");
                 one = false;
                 audioSource.PlayOneShot(sound1);
             }
             else if (hand == 3 && enemy == 1&& (one == true))
             {
                 hand = 0;
-                StartCoroutine("Win");//‰º‚ÌLose‚ğŒ©‚Ä‚­‚ê
+                StartCoroutine("Win");
                 one = false;
                 audioSource.PlayOneShot(sound1);
             }
             else if (hand == 3 && enemy == 2 && (one == true))
             {
                 hand = 0;
-                StartCoroutine("Lose");//‰º‚ÌLose‚ğŒ©‚Ä‚­‚ê
+                StartCoroutine("Lose");
                 one = false;
                 audioSource.PlayOneShot(sound1);
             }
             else if (hand == 3 && enemy == 3 && (one == true))
             {
                 hand = 0;
-                StartCoroutine("Drow");//‰º‚ÌLose‚ğŒ©‚Ä‚­‚ê
+                StartCoroutine("Drow");
                 one = false;
                 audioSource.PlayOneShot(sound1);
             }

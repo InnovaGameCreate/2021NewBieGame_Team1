@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 
 public class FadeManager : MonoBehaviour
 {
-
     //フェード用のCanvasとImage
     private static Canvas fadeCanvas;
     private static Image fadeImage;

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class GaugeDirector : MonoBehaviour
 {
-
     private Image image;
     void Start()
     {

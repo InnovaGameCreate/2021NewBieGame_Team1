@@ -5,26 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class Punch : MonoBehaviour
 {
-    // Start is called before the first frame update
     public int k, l;
     private Animator anim;
+    public GameObject BGM_Game;
+    public AudioClip way;
+
     Rigidbody rigidBody;
     GameObject Player;
-    public GameObject BGM_Game;
     AudioSource audioSource;
-    public AudioClip way;
-    bool SE = true;
 
+    bool SE = true;
 
     void Start()
     {
-        anim = GetComponent<Animator>();
         l = Random.Range(1, 5);
-        rigidBody = GetComponent<Rigidbody>();
         this.gameObject.SetActive(false);
+        anim = GetComponent<Animator>();
+        rigidBody = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
         BGM_Game = GameObject.FindWithTag("BGM_Game");
         Destroy(BGM_Game);
-        audioSource = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -70,7 +71,7 @@ public class Punch : MonoBehaviour
             {
                 if (k == 1)
                 {
-                    rigidBody.AddForce(Vector3.left * 10, ForceMode.Impulse);
+                    rigidBody.AddForce(Vector3.left *10, ForceMode.Impulse);
                 }
                 else if (k == 2)
                 {
@@ -82,7 +83,7 @@ public class Punch : MonoBehaviour
                 }
                 else if (k == 4)
                 {
-                    rigidBody.AddForce(Vector3.forward * 10, ForceMode.Impulse);
+                    rigidBody.AddForce(Vector3.forward *10, ForceMode.Impulse);
                 }
             }
         }

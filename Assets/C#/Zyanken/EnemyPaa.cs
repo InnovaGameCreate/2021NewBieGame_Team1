@@ -8,7 +8,7 @@ public class EnemyPaa : MonoBehaviour
     public GameObject Player;
 
     private bool oneAction;
-    // Start is called before the first frame update
+
     void Start()
     {
         transform.position = new Vector3(0, 30, -7);
@@ -16,7 +16,6 @@ public class EnemyPaa : MonoBehaviour
         oneAction = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow ) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.RightArrow))

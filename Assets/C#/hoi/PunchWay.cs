@@ -9,10 +9,6 @@ public class PunchWay : MonoBehaviour
     public Image downPunchImage;
     public Image rightPunchImage;
     public Image leftPunchImage;
-    void Start()
-    {
-
-    }
 
     void Update()
     {
@@ -23,7 +19,6 @@ public class PunchWay : MonoBehaviour
             rightPunchImage.enabled = false;
             leftPunchImage.enabled = false;
         }
-
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             upPunchImage.enabled = false;

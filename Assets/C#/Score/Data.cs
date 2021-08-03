@@ -22,7 +22,6 @@ public class Data : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
-
         // 唯一のインスタンスなら、シーン遷移しても残す
         DontDestroyOnLoad(this.gameObject);
     }

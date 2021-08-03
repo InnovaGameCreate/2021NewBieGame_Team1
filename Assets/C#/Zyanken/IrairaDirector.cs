@@ -13,8 +13,9 @@ public class IrairaDirector : MonoBehaviour
     private Image image;
     private Image picture;
 
-    Zyanken irairaGauge;
+    public float power = 0.1f;
 
+    Zyanken irairaGauge;
 
     void Awake ()
     {
@@ -29,7 +30,6 @@ public class IrairaDirector : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
-
         DontDestroyOnLoad(this.gameObject);
     }
 
@@ -41,8 +41,6 @@ public class IrairaDirector : MonoBehaviour
             image = gauge.GetComponent<Image>();
             image.fillAmount = fillAmount;
         }
-
-        Debug.Log("asd");
     }
 
     public float GetFillAmount()
@@ -53,5 +51,21 @@ public class IrairaDirector : MonoBehaviour
     {
         image.fillAmount += 0.1f;
         fillAmount = image.fillAmount;
+        power += 0.1f;
+    }
+    public void IncreaseGauge()
+    {
+        image.fillAmount += 0.05f;
+        fillAmount = image.fillAmount;
+        power += 0.05f;
+    }
+
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().name == "Result")
+        {
+            power = 0.1f;
+            fillAmount = 0.0f;
+        }
     }
 }
