@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-
-public class Data : MonoBehaviour
+public class ScoreDirector : MonoBehaviour
 {
-    public float score;
     // GameControllerインスタンスの実体
-    private static Data instance = null;
+    private static ScoreDirector instance = null;
 
     // GameControllerインスタンスのプロパティーは、実体が存在しないとき（＝初回参照時）実体を探して登録する
-    public static Data Instance => instance
-        ?? (instance = GameObject.FindWithTag("Data").GetComponent<Data>());
+    public static ScoreDirector Instance => instance
+        ?? (instance = GameObject.FindWithTag("ScoreDirector").GetComponent<ScoreDirector>());
 
     private void Awake()
     {
@@ -34,11 +31,4 @@ public class Data : MonoBehaviour
     }
 
     // あとはお好きなように
-    private void Update()
-    {
-        if (SceneManager.GetActiveScene().name == "Zyanken")
-        {
-            score = 0;
-        }
-    }
 }

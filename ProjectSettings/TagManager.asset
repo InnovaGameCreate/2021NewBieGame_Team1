@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - BGM_Game
   - Field
+  - ScoreDirector
+  - Data
   layers:
   - Default
   - TransparentFX

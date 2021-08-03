@@ -19,16 +19,16 @@ public class ScoreDistance : MonoBehaviour
         pos2 = Enemy.transform.position;
         dis = 0;
     }
-    
+
     // Update is called once per frame
     void Update()
     {
-        
+
         Vector3 pos1 = Enemy.transform.position;//cubeのところに吹き飛ばされるオブジェクトの名前を書いてください。
-		
-       
-        float dis = Vector3.Distance(pos1,pos2) - 0.02f;//原点とオブジェクト間の距離を測定。
-        MajorText.text = "ふっ飛ばした距離: " + dis.ToString("f2")+"m";
+
+
+        float dis = Vector3.Distance(pos1, pos2) - 0.02f;//原点とオブジェクト間の距離を測定。
+        MajorText.text = "ふっ飛ばした距離: " + dis.ToString("f2") + "m";
         dataCs.score = dis;
 
     }
