@@ -2151,7 +2151,7 @@ GameObject:
   - component: {fileID: 826171231}
   m_Layer: 0
   m_Name: Data
-  m_TagString: Untagged
+  m_TagString: Data
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5553,8 +5553,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 445501344}
   MajorText: {fileID: 1712767886}
-  data: {fileID: 0}
-  dataCs: {fileID: 0}
+  data: {fileID: 826171230}
+  dataCs: {fileID: 826171231}
+  dis: 0
 --- !u!4 &2114518732
 Transform:
   m_ObjectHideFlags: 0

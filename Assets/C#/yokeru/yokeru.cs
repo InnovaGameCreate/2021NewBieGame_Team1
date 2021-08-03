@@ -10,8 +10,6 @@ public class yokeru : MonoBehaviour
     public AudioClip lose;
     // Start is called before the first frame update
     public int n, m;
-    public GameObject data;
-    public Data dataCs;
     private Animator anim;
     bool SE = true;
 
@@ -21,8 +19,6 @@ public class yokeru : MonoBehaviour
         m = Random.Range(1, 5);
         n = 0;
         audioSource = GetComponent<AudioSource>();
-        data = GameObject.Find("Data");
-        dataCs = data.GetComponent<Data>();
     }
 
     // Update is called once per frame
@@ -101,7 +97,6 @@ public class yokeru : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         audioSource.PlayOneShot(lose);
-        dataCs.score = 0;
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Result");
         yield return new WaitForSeconds(1f);

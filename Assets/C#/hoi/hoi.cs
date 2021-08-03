@@ -11,10 +11,8 @@ public class hoi : MonoBehaviour
     public AudioClip win;
     public AudioClip lose;
     public int a, b;
-    public GameObject data;
     private Animator anim;
     bool SE = true;
-    public Data dataCs;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +20,6 @@ public class hoi : MonoBehaviour
         b = Random.Range(1, 5);
         a = 0;
         audioSource = GetComponent<AudioSource>();
-        data = GameObject.Find("Data");
-        dataCs = data.GetComponent<Data>();
     }
 
     // Update is called once per frame
@@ -124,7 +120,6 @@ public class hoi : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         audioSource.PlayOneShot(win);
-        dataCs.score = 0;
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Result");
         yield return new WaitForSeconds(1f);
@@ -134,8 +129,7 @@ public class hoi : MonoBehaviour
     IEnumerator Lose()
     {
         yield return new WaitForSeconds(1f);
-        audioSource.PlayOneShot(lose);
-        
+        audioSource.PlayOneShot(lose);  
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Zyanken");
         yield return new WaitForSeconds(1f);
