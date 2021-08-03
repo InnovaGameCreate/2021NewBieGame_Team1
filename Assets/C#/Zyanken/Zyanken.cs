@@ -115,7 +115,6 @@ public class Zyanken : MonoBehaviour
         audioSource.PlayOneShot(sound2);
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("HOI");
-        yield return new WaitForSeconds(1.0f);
         yield break;
     }
 
@@ -125,7 +124,6 @@ public class Zyanken : MonoBehaviour
         audioSource.PlayOneShot(sound3);
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Escape");
-        yield return new WaitForSeconds(1.0f);
         yield break;
     }
 
@@ -136,7 +134,7 @@ public class Zyanken : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         GameObject director = GameObject.Find("IrairaDirector");
         director.GetComponent<IrairaDirector>().IncreaseIrairaGauge();
-        yield return new WaitForSeconds(1.0f);
+        enemy = Random.Range(1, 4);
         yield break;
     }
 }
