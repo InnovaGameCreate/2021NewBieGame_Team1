@@ -20,7 +20,8 @@ public class RagdollImpact : MonoBehaviour
 
     Rigidbody rigidBody;
     Rigidbody playerRigidBody;
-    GameObject Player;
+
+    [SerializeField] GameObject Player;
     GameObject Field;
 
     bool SE = true;
@@ -31,7 +32,6 @@ public class RagdollImpact : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-        Player = GameObject.FindGameObjectWithTag("Player");
         Field = GameObject.FindGameObjectWithTag("Field");
         playerRigidBody = Player.GetComponent<Rigidbody>();
         punch = Player.GetComponent<Punch>();
