@@ -4864,6 +4864,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 873ca3ef6368e2044831e7c777f3d804, type: 3}
     - target: {fileID: 8872520129680320622, guid: dd8159de0bb3bd94ab059930379b4705, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1250420334}
+    - target: {fileID: 8872520129680320622, guid: dd8159de0bb3bd94ab059930379b4705, type: 3}
       propertyPath: PunchSE
       value: 
       objectReference: {fileID: 8300000, guid: daa355bf5e1ec374f836ff1f02488924, type: 3}
