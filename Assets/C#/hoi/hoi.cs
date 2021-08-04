@@ -49,13 +49,11 @@ public class hoi : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.RightShift))
         {
-            Debug.Log("右シフト");
             SceneManager.LoadScene("Punch");
             audioSource.PlayOneShot(punchSound);
         }
         else if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            Debug.Log("左シフト");
             SceneManager.LoadScene("Punch");
             audioSource.PlayOneShot(punchSound);
         }

@@ -134,6 +134,7 @@ public class Zyanken : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         GameObject director = GameObject.Find("IrairaDirector");
         director.GetComponent<IrairaDirector>().IncreaseIrairaGauge();
+        yield return new WaitForSeconds(1.5f);
         enemy = Random.Range(1, 4);
         yield break;
     }

@@ -50,6 +50,7 @@ public class Punch : MonoBehaviour
             else if (Input.GetKey(KeyCode.UpArrow))
             {
                 k = 3;
+                transform.Rotate(new Vector3(0, 50, 0));
                 anim.SetBool("is_upperCut", true);
                 audioSource.PlayOneShot(way);
                 SE = false;
@@ -71,19 +72,19 @@ public class Punch : MonoBehaviour
             {
                 if (k == 1)
                 {
-                    rigidBody.AddForce(Vector3.left *10, ForceMode.Impulse);
+                    transform.Translate(Vector3.left *10);
                 }
                 else if (k == 2)
                 {
-                    rigidBody.AddForce(Vector3.right * 10, ForceMode.Impulse);
+                    transform.Translate(Vector3.right * 10);
                 }
                 else if (k == 3)
                 {
-                    rigidBody.AddForce(Vector3.up * 10, ForceMode.Impulse);
+                    transform.Translate(Vector3.up * 10);
                 }
                 else if (k == 4)
                 {
-                    rigidBody.AddForce(Vector3.forward *10, ForceMode.Impulse);
+                    transform.Translate(Vector3.forward *10);
                 }
             }
         }

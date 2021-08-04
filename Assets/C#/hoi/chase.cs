@@ -12,7 +12,7 @@ public class chase : MonoBehaviour
     void Start()
     {
         //Enemy‚Ìî•ñ‚ğæ“¾
-        this.player = GameObject.Find("Spine");
+        this.player = GameObject.Find("Enemy");
         // MainCamera(©•ª©g)‚Æplayer‚Æ‚Ì‘Š‘Î‹——£‚ğ‹‚ß‚é
         offset = transform.position - player.transform.position;
     }
