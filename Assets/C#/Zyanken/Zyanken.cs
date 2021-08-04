@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Zyanken : MonoBehaviour
 {
-    public float hand;
+    public int hand;
     public int enemy;
 
     private bool one; 
@@ -45,63 +45,54 @@ public class Zyanken : MonoBehaviour
         {
             if ((hand == 1) && (enemy == 1) && (one == true))
             {
-                hand = 0;
                 StartCoroutine("Drow");
                 one = false;
                 audioSource.PlayOneShot(sound1);
             }
             else if (hand == 1 && enemy == 2 && (one == true))
             {
-                hand = 0;
                 StartCoroutine("Win");
                 one = false;
                 audioSource.PlayOneShot(sound1);
             }
             else if (hand == 1 && enemy == 3 && (one == true))
             {
-                hand = 0;
                 StartCoroutine("Lose");
                 one = false;
                 audioSource.PlayOneShot(sound1);
             }
             else if (hand == 2 && enemy == 1 && (one == true))
             {
-                hand = 0;
                 StartCoroutine("Lose");
                 one = false;
                 audioSource.PlayOneShot(sound1);
             }
             else if (hand == 2 && enemy == 2 && (one == true))
             {
-                hand = 0;
                 StartCoroutine("Drow");
                 one = false;
                 audioSource.PlayOneShot(sound1);
             }
             else if (hand == 2 && enemy == 3 && (one == true))
             {
-                hand = 0;
                 StartCoroutine("Win");
                 one = false;
                 audioSource.PlayOneShot(sound1);
             }
             else if (hand == 3 && enemy == 1&& (one == true))
             {
-                hand = 0;
                 StartCoroutine("Win");
                 one = false;
                 audioSource.PlayOneShot(sound1);
             }
             else if (hand == 3 && enemy == 2 && (one == true))
             {
-                hand = 0;
                 StartCoroutine("Lose");
                 one = false;
                 audioSource.PlayOneShot(sound1);
             }
             else if (hand == 3 && enemy == 3 && (one == true))
             {
-                hand = 0;
                 StartCoroutine("Drow");
                 one = false;
                 audioSource.PlayOneShot(sound1);

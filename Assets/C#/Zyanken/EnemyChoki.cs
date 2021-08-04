@@ -8,20 +8,17 @@ public class EnemyChoki : MonoBehaviour
     public GameObject Player;
 
     private bool oneAction;
+
     void Start()
     {
         transform.position = new Vector3(0, 30, -7);
         Player = GameObject.Find("player");
-        oneAction = false;
+        oneAction = true;
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.LeftArrow)|| Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            oneAction = true;
-        }
-        if (Player.GetComponent<Zyanken>().enemy == 2 && oneAction == true)
+        if ((Player.GetComponent<Zyanken>().enemy == 2) && (Player.GetComponent<Zyanken>().hand != 0) && (oneAction == true))
         {
             StartCoroutine("Count");
             oneAction = false;
@@ -34,6 +31,7 @@ public class EnemyChoki : MonoBehaviour
         transform.position = new Vector3(0, 0, -7);
         yield return new WaitForSeconds(2f);
         transform.position = new Vector3(0, 30,-7);
+        Player.GetComponent<Zyanken>().hand = 0;
         yield break;
     }
 }
