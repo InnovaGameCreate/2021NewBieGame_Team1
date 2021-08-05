@@ -35,7 +35,7 @@ public class Choki : MonoBehaviour
 
     IEnumerator CountChoki()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3.5f);
         transform.position = new Vector3(0, 0, 2);
         once = true;
         yield break;
@@ -43,7 +43,7 @@ public class Choki : MonoBehaviour
 
     IEnumerator Count()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3.5f);
         once = true;
         yield break;
     }

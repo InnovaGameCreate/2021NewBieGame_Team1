@@ -29,9 +29,12 @@ public class EnemyGuu : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         transform.position = new Vector3(0, 0, -7);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.5f);
         transform.position = new Vector3(0, 30, -7);
+        yield return new WaitForSeconds(0.5f);
         Player.GetComponent<Zyanken>().hand = 0;
+        oneAction = true;
+        Player.GetComponent<Zyanken>().enemy = Random.Range(1, 4);
         yield break;
     }
 }

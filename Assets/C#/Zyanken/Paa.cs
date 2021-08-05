@@ -32,7 +32,7 @@ public class Paa : MonoBehaviour
     }
     IEnumerator CountPaa()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3.5f);
         transform.position = new Vector3(-8, 0, 7);
         once = true;
         yield break;
@@ -40,7 +40,7 @@ public class Paa : MonoBehaviour
 
     IEnumerator Count ()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3.5f);
         once = true;
         yield break;
     }
