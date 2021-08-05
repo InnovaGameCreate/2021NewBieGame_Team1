@@ -26,6 +26,7 @@ public class RagdollImpact : MonoBehaviour
 
     bool SE = true;
     bool isCollision = false;
+    bool oneCoroutine = true;
 
 
     void Start()
@@ -93,9 +94,6 @@ public class RagdollImpact : MonoBehaviour
                     {
                         animator.SetBool("Is_down", true);
                     }
-
-                    StartCoroutine("Win");
-
                     k = 0;
                     SE = false;
                 }
@@ -125,6 +123,11 @@ public class RagdollImpact : MonoBehaviour
             else if (collision.gameObject.tag == "Field" && isCollision == true)
             {
                 audioSource.PlayOneShot(collisionSE);
+                if (oneCoroutine == true)
+                {
+                    StartCoroutine("Win");
+                    oneCoroutine = false;
+                }
             }
     }
 
@@ -132,7 +135,7 @@ public class RagdollImpact : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         audioSource.PlayOneShot(win);
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("Result");
         yield return new WaitForSeconds(1f);
         yield break;
