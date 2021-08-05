@@ -11,65 +11,67 @@ public class yokeru : MonoBehaviour
 
     public int n, m;
     private Animator anim;
-    bool SE = true;
 
+    private bool SE;
+    private bool oneAction;
     void Start()
     {
         anim = GetComponent<Animator>();
         m = Random.Range(1, 5);
         n = 0;
         audioSource = GetComponent<AudioSource>();
+        SE = true;
+        oneAction = true;
     }
 
     void Update()
     {
         //ここが自分の入力
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (oneAction == true)
         {
-            n = 1;
-            anim.SetBool("Is_right", true);
-            audioSource.PlayOneShot(way);
-        }
-
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            n = 2;
-            anim.SetBool("Is_left", true);
-            audioSource.PlayOneShot(way);
-        }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            n = 3;
-            anim.SetBool("Is_up", true);
-            audioSource.PlayOneShot(way);
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            n = 4;
-            anim.SetBool("Is_down", true);
-            audioSource.PlayOneShot(way);
-        }
-
-        //ここから別の処理で相手と自分の判定
-        if (SE == true)
-        {
-            if (n != 0)
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                if (n == m)
-                {
-                    //h = 2;
-                    StartCoroutine("Lose");
-                    SE = false;
-                    //n = 0;
+                n = 1;
+                anim.SetBool("Is_right", true);
+                audioSource.PlayOneShot(way);
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                n = 2;
+                anim.SetBool("Is_left", true);
+                audioSource.PlayOneShot(way);
+            }
+            else if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                n = 3;
+                anim.SetBool("Is_up", true);
+                audioSource.PlayOneShot(way);
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                n = 4;
+                anim.SetBool("Is_down", true);
+                audioSource.PlayOneShot(way);
+            }
 
-                }
-                else if (n != m)
+            //ここから別の処理で相手と自分の判定
+            if (SE == true)
+            {
+                if (n != 0)
                 {
-
-                    StartCoroutine("Win");
-                    SE = false;
-                    //n = 0;
+                    if (n == m)
+                    {
+                        StartCoroutine("Lose");
+                        SE = false;
+                        oneAction = false;
+                    }
+                    else if (n != m)
+                    {
+                        StartCoroutine("Win");
+                        SE = false;
+                        oneAction = false;
+                    }
                 }
             }
         }

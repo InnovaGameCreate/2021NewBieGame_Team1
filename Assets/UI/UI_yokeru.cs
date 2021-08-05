@@ -13,6 +13,9 @@ public class UI_yokeru : MonoBehaviour
     public Image FingerDownImage;
     public Image FingerRightImage;
     public Image FingerLeftImage;
+
+    private bool oneAction;
+
     yokeru Yokeru;
     GameObject Player;
     // Start is called before the first frame update
@@ -24,6 +27,7 @@ public class UI_yokeru : MonoBehaviour
         FingerLeftImage.enabled = false;
         Player = GameObject.FindGameObjectWithTag("Player");
         Yokeru = Player.GetComponent<yokeru>();
+        oneAction = true;
     }
 
     // Update is called once per frame
@@ -32,95 +36,100 @@ public class UI_yokeru : MonoBehaviour
         int n = Yokeru.n;
         int m = Yokeru.m;
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (oneAction == true)
         {
-            if (m == 1)
+            if (Input.GetKey(KeyCode.LeftArrow))
             {
-                FingerLeftImage.enabled = true;
+                if (m == 1)
+                {
+                    FingerLeftImage.enabled = true;
+                }
+                else if (m == 2)
+                {
+                    FingerRightImage.enabled = true;
+                }
+                else if (m == 3)
+                {
+                    FingerUpImage.enabled = true;
+                }
+                else if (m == 4)
+                {
+                    FingerDownImage.enabled = true;
+                }
+                UpImage.enabled = false;
+                DownImage.enabled = false;
+                RightImage.enabled = false;
+                oneAction = false;
             }
-            else if (m == 2)
+            else if (Input.GetKey(KeyCode.RightArrow))
             {
-                FingerRightImage.enabled = true;
+                if (m == 1)
+                {
+                    FingerLeftImage.enabled = true;
+                }
+                else if (m == 2)
+                {
+                    FingerRightImage.enabled = true;
+                }
+                else if (m == 3)
+                {
+                    FingerUpImage.enabled = true;
+                }
+                else if (m == 4)
+                {
+                    FingerDownImage.enabled = true;
+                }
+                UpImage.enabled = false;
+                DownImage.enabled = false;
+                LeftImage.enabled = false;
+                oneAction = false;
             }
-            else if (m == 3)
+            else if (Input.GetKey(KeyCode.UpArrow))
             {
-                FingerUpImage.enabled = true;
+                if (m == 1)
+                {
+                    FingerLeftImage.enabled = true;
+                }
+                else if (m == 2)
+                {
+                    FingerRightImage.enabled = true;
+                }
+                else if (m == 3)
+                {
+                    FingerUpImage.enabled = true;
+                }
+                else if (m == 4)
+                {
+                    FingerDownImage.enabled = true;
+                }
+                DownImage.enabled = false;
+                RightImage.enabled = false;
+                LeftImage.enabled = false;
+                oneAction = false;
             }
-            else if (m == 4)
+            else if (Input.GetKey(KeyCode.DownArrow))
             {
-                FingerDownImage.enabled = true;
+                if (m == 1)
+                {
+                    FingerLeftImage.enabled = true;
+                }
+                else if (m == 2)
+                {
+                    FingerRightImage.enabled = true;
+                }
+                else if (m == 3)
+                {
+                    FingerUpImage.enabled = true;
+                }
+                else if (m == 4)
+                {
+                    FingerDownImage.enabled = true;
+                }
+                UpImage.enabled = false;
+                RightImage.enabled = false;
+                LeftImage.enabled = false;
+                oneAction = false;
             }
-            UpImage.enabled = false;
-            DownImage.enabled = false;
-            RightImage.enabled = false;
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            if (m == 1)
-            {
-                FingerLeftImage.enabled = true;
-            }
-            else if (m == 2)
-            {
-                FingerRightImage.enabled = true;
-            }
-            else if (m == 3)
-            {
-                FingerUpImage.enabled = true;
-            }
-            else if (m == 4)
-            {
-                FingerDownImage.enabled = true;
-            }
-            UpImage.enabled = false;
-            DownImage.enabled = false;
-            LeftImage.enabled = false;
-        }
-        else if (Input.GetKey(KeyCode.UpArrow))
-        {
-            if (m == 1)
-            {
-                FingerLeftImage.enabled = true;
-            }
-            else if (m == 2)
-            {
-                FingerRightImage.enabled = true;
-            }
-            else if (m == 3)
-            {
-                FingerUpImage.enabled = true;
-            }
-            else if (m == 4)
-            {
-                FingerDownImage.enabled = true;
-            }
-            DownImage.enabled = false;
-            RightImage.enabled = false;
-            LeftImage.enabled = false;
-        }
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            if (m == 1)
-            {
-                FingerLeftImage.enabled = true;
-            }
-            else if (m == 2)
-            {
-                FingerRightImage.enabled = true;
-            }
-            else if (m == 3)
-            {
-                FingerUpImage.enabled = true;
-            }
-            else if (m == 4)
-            {
-                FingerDownImage.enabled = true;
-            }
-            UpImage.enabled = false;
-            RightImage.enabled = false;
-            LeftImage.enabled = false;
-        }
-
-        
     }
 }

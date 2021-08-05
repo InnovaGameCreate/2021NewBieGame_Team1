@@ -1320,8 +1320,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 6.1509013, z: 1}
-  m_Center: {x: 0, y: 3.1521761, z: 0}
+  m_Size: {x: 1.7192123, y: 6.1509013, z: 1}
+  m_Center: {x: 0.00747066, y: 3.1521761, z: 0}
 --- !u!1 &478186772 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8864258480012095258, guid: cfa9b847d6f17e642b69a026c8afceff, type: 3}
@@ -1462,8 +1462,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 78.311035, y: 34.558483, z: 1.3512115}
-  m_Center: {x: 5.592456, y: 4.6547227, z: 18.950724}
+  m_Size: {x: 78.311035, y: 39.803944, z: 1.3512111}
+  m_Center: {x: 5.592457, y: 7.2774444, z: 18.950722}
 --- !u!4 &507227214
 Transform:
   m_ObjectHideFlags: 0
@@ -4655,8 +4655,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 75.575645, y: 46.53106, z: 1.3512117}
-  m_Center: {x: 4.2247243, y: 10.640819, z: 18.950642}
+  m_Size: {x: 75.575645, y: 69.09889, z: 1.3512117}
+  m_Center: {x: 4.2247243, y: 21.924444, z: 18.950493}
 --- !u!4 &1750780771
 Transform:
   m_ObjectHideFlags: 0
@@ -4891,6 +4891,10 @@ PrefabInstance:
       propertyPath: collisionSE
       value: 
       objectReference: {fileID: 8300000, guid: df495fc62557a2041a4a0bdf6b644eba, type: 3}
+    - target: {fileID: 8872520129680320622, guid: dd8159de0bb3bd94ab059930379b4705, type: 3}
+      propertyPath: magnification
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8872520129680320623, guid: dd8159de0bb3bd94ab059930379b4705, type: 3}
       propertyPath: m_Size.x
       value: 7.741668
@@ -4903,6 +4907,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: 5975abcea0f612147b90f06d9be8e8bb, type: 2}
+    - target: {fileID: 8872520129680320624, guid: dd8159de0bb3bd94ab059930379b4705, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8872520129680320624, guid: dd8159de0bb3bd94ab059930379b4705, type: 3}
       propertyPath: m_CollisionDetection
       value: 1

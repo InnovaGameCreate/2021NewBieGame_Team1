@@ -8,7 +8,7 @@ public class GoExplanation3 : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.RightArrow))
         {
-            FadeManager.FadeOut(3);
+            SceneManager.LoadScene("Explanation3");
         }
     }
 }

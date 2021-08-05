@@ -37,7 +37,6 @@ public class RagdollImpact : MonoBehaviour
         punch = Player.GetComponent<Punch>();
         rigidBody.maxAngularVelocity = 100;
         audioSource = GetComponent<AudioSource>();
-
         magnification = GameObject.Find("IrairaDirector").GetComponent<IrairaDirector>().power;
     }
 
@@ -70,7 +69,6 @@ public class RagdollImpact : MonoBehaviour
                     {
                         animator.SetBool("Is_down", true);
                     }
-                    //h = 2;
                     StartCoroutine("Lose");
 
                     k = 0;
@@ -95,6 +93,7 @@ public class RagdollImpact : MonoBehaviour
                     {
                         animator.SetBool("Is_down", true);
                     }
+
                     StartCoroutine("Win");
 
                     k = 0;
@@ -120,7 +119,7 @@ public class RagdollImpact : MonoBehaviour
                 rigidBody.AddForce(playerVelocity * (impulse * 2) * magnification , ForceMode.Impulse);
                 rigidBody.AddForce(Vector3.up * (impulse * 1 / 2)* magnification, ForceMode.Impulse);
                 rigidBody.AddForce(Vector3.back * (impulse * 1 / 2) * magnification, ForceMode.Impulse);
-                rigidBody.AddTorque(10, 10, 100, ForceMode.Force);
+                rigidBody.AddTorque(10f, 10f, 10f, ForceMode.Force);
                 isCollision = true;
             }
             else if (collision.gameObject.tag == "Field" && isCollision == true)
@@ -133,7 +132,7 @@ public class RagdollImpact : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         audioSource.PlayOneShot(win);
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(6f);
         SceneManager.LoadScene("Result");
         yield return new WaitForSeconds(1f);
         yield break;

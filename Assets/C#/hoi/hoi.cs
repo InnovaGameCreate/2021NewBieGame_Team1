@@ -15,7 +15,8 @@ public class hoi : MonoBehaviour
 
     public int a, b;
 
-    bool SE = true;
+    private bool SE;
+    private bool oneAction;
 
     void Start()
     {
@@ -23,90 +24,98 @@ public class hoi : MonoBehaviour
         b = Random.Range(1, 5);
         a = 0;
         audioSource = GetComponent<AudioSource>();
+        SE = true;
+        oneAction = true;
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (oneAction == true)
         {
-            a = 1;
-            audioSource.PlayOneShot(way);
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            a = 2;
-            audioSource.PlayOneShot(way);
-        }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            a = 3;
-            audioSource.PlayOneShot(way);
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            a = 4;
-            audioSource.PlayOneShot(way);
-        }
-
-        if (Input.GetKeyDown(KeyCode.RightShift))
-        {
-            SceneManager.LoadScene("Punch");
-            audioSource.PlayOneShot(punchSound);
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            SceneManager.LoadScene("Punch");
-            audioSource.PlayOneShot(punchSound);
-        }
-        //以下敵のアニメーション再生
-        if (SE == true)
-        {
-            if (a != 0)
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                if (a == b)//勝利　ただしスコア0
-                {
-                    if (b == 1)
-                    {
-                        anim.SetBool("Is_right", true);
-                    }
-                    else if (b == 2)
-                    {
-                        anim.SetBool("Is_left", true);
-                    }
-                    else if (b == 3)
-                    {
-                        anim.SetBool("Is_up", true);
-                    }
-                    else if (b == 4)
-                    {
-                        anim.SetBool("Is_down", true);
-                    }
-                    
-                    StartCoroutine("Win");
-                    SE = false;
-                }
+                a = 1;
+                audioSource.PlayOneShot(way);
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                a = 2;
+                audioSource.PlayOneShot(way);
+            }
+            else if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                a = 3;
+                audioSource.PlayOneShot(way);
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                a = 4;
+                audioSource.PlayOneShot(way);
+            }
 
-                else if (a != b)//敵に避けられた
+            if (Input.GetKeyDown(KeyCode.RightShift))
+            {
+                SceneManager.LoadScene("Punch");
+                audioSource.PlayOneShot(punchSound);
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                SceneManager.LoadScene("Punch");
+                audioSource.PlayOneShot(punchSound);
+            }
+
+            //以下敵のアニメーション再生
+            if (SE == true)
+            {
+                if (a != 0)
                 {
-                    //以下敵のアニメーション再生
-                    if (b == 1)
+                    if (a == b)//勝利　ただしスコア0
                     {
-                        anim.SetBool("Is_right", true);
-                    }
-                    else if (b == 2)
-                    {
-                        anim.SetBool("Is_left", true);
-                    }
-                    else if (b == 3)
-                    {
-                        anim.SetBool("Is_up", true);
-                    }
-                    else if (b == 4)
-                    {
-                        anim.SetBool("Is_down", true);
+                        if (b == 1)
+                        {
+                            anim.SetBool("Is_right", true);
+                        }
+                        else if (b == 2)
+                        {
+                            anim.SetBool("Is_left", true);
+                        }
+                        else if (b == 3)
+                        {
+                            anim.SetBool("Is_up", true);
+                        }
+                        else if (b == 4)
+                        {
+                            anim.SetBool("Is_down", true);
+                        }
+
+                        StartCoroutine("Win");
+                        SE = false;
+                        oneAction = false;
                     }
 
-                    StartCoroutine("Lose");
-                    SE = false;
+                    else if (a != b)//敵に避けられた
+                    {
+                        //以下敵のアニメーション再生
+                        if (b == 1)
+                        {
+                            anim.SetBool("Is_right", true);
+                        }
+                        else if (b == 2)
+                        {
+                            anim.SetBool("Is_left", true);
+                        }
+                        else if (b == 3)
+                        {
+                            anim.SetBool("Is_up", true);
+                        }
+                        else if (b == 4)
+                        {
+                            anim.SetBool("Is_down", true);
+                        }
+
+                        StartCoroutine("Lose");
+                        SE = false;
+                        oneAction = false;
+                    }
                 }
             }
         }
