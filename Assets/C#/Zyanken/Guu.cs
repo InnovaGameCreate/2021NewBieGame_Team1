@@ -14,7 +14,7 @@ public class Guu : MonoBehaviour
 
     void Update()
     {
-        if(once == true)
+        if ((once == true) && (Player.GetComponent<Zyanken>().hand != 0))
         {
             if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.UpArrow))
             {

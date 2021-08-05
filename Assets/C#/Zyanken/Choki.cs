@@ -7,17 +7,19 @@ public class Choki : MonoBehaviour
     public GameObject Player;
 
     public bool once;
+    private bool oneAction;
     // Start is called before the first frame update
     void Start()
     {
         Player = GameObject.Find("player");
         once = true;
+        oneAction = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (once == true)
+        if ((once == true) && (Player.GetComponent<Zyanken>().hand != 0))
         {
             if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
             {

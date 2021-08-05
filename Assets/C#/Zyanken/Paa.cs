@@ -6,7 +6,6 @@ public class Paa : MonoBehaviour
 {
     public GameObject Player;
     private bool once;
-
     void Start()
     {
         Player = GameObject.Find("player");
@@ -15,7 +14,7 @@ public class Paa : MonoBehaviour
 
     void Update()
     {
-        if (once == true)
+        if ((once == true) && (Player.GetComponent<Zyanken>().hand != 0))
         {
             if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.UpArrow))
             {

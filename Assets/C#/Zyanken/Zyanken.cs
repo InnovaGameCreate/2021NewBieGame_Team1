@@ -18,7 +18,7 @@ public class Zyanken : MonoBehaviour
     public AudioClip sound3;
     public AudioClip sound4;
 
-    void Start()
+    void Awake()
     {
         ableToZyanken = true; 
         one = false;
