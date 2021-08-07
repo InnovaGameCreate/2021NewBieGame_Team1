@@ -39,20 +39,19 @@ public class RagdollImpact : MonoBehaviour
         rigidBody.maxAngularVelocity = 100;
         audioSource = GetComponent<AudioSource>();
         magnification = GameObject.Find("IrairaDirector").GetComponent<IrairaDirector>().power;
+        int l = punch.l;
     }
 
     void Update()
     {
         int k = punch.k;
-        int l = punch.l;
-
 
 
         if (SE == true)
         {
             if (k != 0)
             {
-                if (k == l)
+                if (k == punch.l)
                 {
                     if (k == 1)
                     {
@@ -76,7 +75,7 @@ public class RagdollImpact : MonoBehaviour
                     SE = false;
 
                 }
-                else if (k != l)
+                else if (k != punch.l)
                 {
                     if (k == 1)
                     {
