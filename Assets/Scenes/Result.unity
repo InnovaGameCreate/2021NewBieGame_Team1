@@ -428,6 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d43bfa3b68752b4cb78e90190fa3d3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BGM_Game: {fileID: 0}
   data: {fileID: 0}
   dataCs: {fileID: 0}
   message: {fileID: 1653846280}
@@ -949,7 +950,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "[T]\u30BF\u30A4\u30C8\u30EB\u3078\u3000\u3000[R]\u30EA\u30B9\u30BF\u30FC\u30C8!!"
+  m_Text: "[T]\u30BF\u30A4\u30C8\u30EB\u3078\u3000\u3000[R]\u30EA\u30B9\u30BF\u30FC\u30C8!!\n[Q]\u30AA\u30EF\u30EA"
 --- !u!222 &1678703907
 CanvasRenderer:
   m_ObjectHideFlags: 0

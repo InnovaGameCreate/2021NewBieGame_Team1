@@ -10,5 +10,9 @@ public class GoGame : MonoBehaviour
         {
             FadeManager.FadeOut(5);
         }
+        if (Input.GetKey(KeyCode.Q))
+        {
+            Application.Quit();
+        }
     }
 }

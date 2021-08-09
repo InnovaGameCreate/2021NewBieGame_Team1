@@ -44,6 +44,10 @@ public class RagdollImpact : MonoBehaviour
 
     void Update()
     {
+        if (magnification >= 3f)
+        {
+            magnification = 3f;
+        }
         int k = punch.k;
 
 

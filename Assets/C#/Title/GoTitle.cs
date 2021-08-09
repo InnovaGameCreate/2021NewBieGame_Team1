@@ -10,5 +10,9 @@ public class GoTitle : MonoBehaviour
         {
             SceneManager.LoadScene("Title");
         }
+        if (Input.GetKey(KeyCode.Q))
+        {
+            Application.Quit();
+        }
     }
 }
