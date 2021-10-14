@@ -9,6 +9,8 @@ TagManager:
   - Field
   - ScoreDirector
   - Data
+  - Bullet
+  - BGM_Title
   layers:
   - Default
   - TransparentFX

@@ -9,16 +9,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: de7f5cca65a9feb439f02226f0b22c30
   - enabled: 1
-    path: Assets/Scenes/Explanation.unity
+    path: Assets/Scenes/ExplanationScenes/Explanation.unity
     guid: 59a9e73b9618b7b479f936276fb48495
   - enabled: 1
-    path: Assets/Scenes/Explanation2.unity
+    path: Assets/Scenes/ExplanationScenes/Explanation2.unity
     guid: ee5a93ddbd50b534191ed8baa4deddc1
   - enabled: 1
-    path: Assets/Scenes/Explanation3.unity
+    path: Assets/Scenes/ExplanationScenes/Explanation3.unity
     guid: a4b109b9501e90743ae70b3346d64a48
   - enabled: 1
-    path: Assets/Scenes/Explanation4.unity
+    path: Assets/Scenes/ExplanationScenes/Explanation4.unity
     guid: ac98fe99eb3c90e42b6f33d97f5bb6cb
   - enabled: 1
     path: Assets/Scenes/Zyanken.unity
@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Result.unity
     guid: 91c2d4d1e5ec45f4289c9bc3d5a748c8
+  - enabled: 1
+    path: Assets/Scenes/robby.unity
+    guid: e4eb940e00b3cf548a66a5f310714b18
   m_configObjects: {}
