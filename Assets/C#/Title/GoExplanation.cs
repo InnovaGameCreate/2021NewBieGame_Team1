@@ -10,6 +10,5 @@ public class GoExplanation : MonoBehaviour
         {
            FadeManager.FadeOut(1);
         }
-        
     }
 }

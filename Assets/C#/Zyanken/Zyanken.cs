@@ -9,8 +9,7 @@ public class Zyanken : MonoBehaviour
     public int hand;
     public int enemy;
 
-    private bool one;
-    public bool ableToZyanken;
+    public bool isAbleToZyanken;
 
     AudioSource audioSource;
     public AudioClip sound1;
@@ -20,90 +19,87 @@ public class Zyanken : MonoBehaviour
 
     void Awake()
     {
-        ableToZyanken = true; 
-        one = false;
+        isAbleToZyanken = true; 
         audioSource = GetComponent<AudioSource>();
         enemy = Random.Range(1, 4);
         hand = 0;
     }
     void Update()
     {
-        if (ableToZyanken == true)
+        if (isAbleToZyanken == true)
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 hand = 1;
-                one = true;
-                ableToZyanken = false;
+                isAbleToZyanken = false;
+                StartZyanken();
+                return;
             }
             else if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 hand = 2;
-                one = true;
-                ableToZyanken = false;
+                isAbleToZyanken = false;
+                StartZyanken();
+                return;
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 hand = 3;
-                one = true;
-                ableToZyanken = false;
+                isAbleToZyanken = false;
+                StartZyanken();
+                return;
             }
-            if (hand != 0)
+        }
+    }
+
+    void StartZyanken()
+    {
+        if (hand != 0)
+        {
+            if ((hand == 1) && (enemy == 1))
             {
-                if ((hand == 1) && (enemy == 1) && (one == true))
-                {
-                    StartCoroutine("Drow");
-                    one = false;
-                    audioSource.PlayOneShot(sound1);
-                }
-                else if (hand == 1 && enemy == 2 && (one == true))
-                {
-                    StartCoroutine("Win");
-                    one = false;
-                    audioSource.PlayOneShot(sound1);
-                }
-                else if (hand == 1 && enemy == 3 && (one == true))
-                {
-                    StartCoroutine("Lose");
-                    one = false;
-                    audioSource.PlayOneShot(sound1);
-                }
-                else if (hand == 2 && enemy == 1 && (one == true))
-                {
-                    StartCoroutine("Lose");
-                    one = false;
-                    audioSource.PlayOneShot(sound1);
-                }
-                else if (hand == 2 && enemy == 2 && (one == true))
-                {
-                    StartCoroutine("Drow");
-                    one = false;
-                    audioSource.PlayOneShot(sound1);
-                }
-                else if (hand == 2 && enemy == 3 && (one == true))
-                {
-                    StartCoroutine("Win");
-                    one = false;
-                    audioSource.PlayOneShot(sound1);
-                }
-                else if (hand == 3 && enemy == 1 && (one == true))
-                {
-                    StartCoroutine("Win");
-                    one = false;
-                    audioSource.PlayOneShot(sound1);
-                }
-                else if (hand == 3 && enemy == 2 && (one == true))
-                {
-                    StartCoroutine("Lose");
-                    one = false;
-                    audioSource.PlayOneShot(sound1);
-                }
-                else if (hand == 3 && enemy == 3 && (one == true))
-                {
-                    StartCoroutine("Drow");
-                    one = false;
-                    audioSource.PlayOneShot(sound1);
-                }
+                StartCoroutine("Drow");
+                audioSource.PlayOneShot(sound1);
+            }
+            else if (hand == 1 && enemy == 2)
+            {
+                StartCoroutine("Win");
+                audioSource.PlayOneShot(sound1);
+            }
+            else if (hand == 1 && enemy == 3)
+            {
+                StartCoroutine("Lose");
+                audioSource.PlayOneShot(sound1);
+            }
+            else if (hand == 2 && enemy == 1)
+            {
+                StartCoroutine("Lose");
+                audioSource.PlayOneShot(sound1);
+            }
+            else if (hand == 2 && enemy == 2)
+            {
+                StartCoroutine("Drow");
+                audioSource.PlayOneShot(sound1);
+            }
+            else if (hand == 2 && enemy == 3)
+            {
+                StartCoroutine("Win");
+                audioSource.PlayOneShot(sound1);
+            }
+            else if (hand == 3 && enemy == 1)
+            {
+                StartCoroutine("Win");
+                audioSource.PlayOneShot(sound1);
+            }
+            else if (hand == 3 && enemy == 2)
+            {
+                StartCoroutine("Lose");
+                audioSource.PlayOneShot(sound1);
+            }
+            else if (hand == 3 && enemy == 3)
+            {
+                StartCoroutine("Drow");
+                audioSource.PlayOneShot(sound1);
             }
         }
     }
@@ -134,7 +130,8 @@ public class Zyanken : MonoBehaviour
         GameObject director = GameObject.Find("IrairaDirector");
         director.GetComponent<IrairaDirector>().IncreaseIrairaGauge();
         yield return new WaitForSeconds(2f);
-        ableToZyanken = true;
+        isAbleToZyanken = true;
+        enemy = Random.Range(1, 4);
         yield break;
     }
 }

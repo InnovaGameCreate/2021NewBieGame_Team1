@@ -8,7 +8,7 @@ public class GoGame : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Space))
         {
-            FadeManager.FadeOut(5);
+            FadeManager.FadeOut(10);
         }
         if (Input.GetKey(KeyCode.Q))
         {
