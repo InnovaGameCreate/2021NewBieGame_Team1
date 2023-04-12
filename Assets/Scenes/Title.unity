@@ -329,7 +329,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "[SPACE]\u30B2\u30FC\u30E0\u30B9\u30BF\u30FC\u30C8 \u3000\u3000[E]\u30B2\u30FC\u30E0\u30BB\u30C4\u30E1\u30A4\n[Q]\u30B2\u30FC\u30E0\u30B7\u30E5\u30A6\u30EA\u30E7\u30A6"
+  m_Text: "[SPACE]\u30B2\u30FC\u30E0\u30B9\u30BF\u30FC\u30C8 \u3000\u3000[E]\u30B2\u30FC\u30E0\u30BB\u30C4\u30E1\u30A4"
 --- !u!222 &409959634
 CanvasRenderer:
   m_ObjectHideFlags: 0
